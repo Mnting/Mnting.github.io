@@ -75,7 +75,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dreamer">
-<meta property="og:url" content="http://yoursite.com/categories/随笔/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/披荆斩棘/index.html">
 <meta property="og:site_name" content="Dreamer">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -109,13 +109,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/随笔/"/>
+  <link rel="canonical" href="http://yoursite.com/categories/披荆斩棘/"/>
 
 
 
 
 
-  <title>分类: 随笔 | Dreamer</title>
+  <title>分类: 披荆斩棘 | Dreamer</title>
   
 
 
@@ -181,11 +181,11 @@
       
         
         <li class="menu-item menu-item-essay">
-          <a href="/categories/随笔" rel="section">
+          <a href="/categories/披荆斩棘" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            随笔
+            披荆斩棘
           </a>
         </li>
       
@@ -225,7 +225,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>随笔<small>分类</small>
+        <h1>披荆斩棘<small>分类</small>
         </h1>
       </div>
 
@@ -237,7 +237,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/04/25/遇到的问题/" itemprop="url">
+            <a class="post-title-link" href="/2018/04/25/beyoundcompare/" itemprop="url">
               
                 <span itemprop="name">beyoundcompare到期</span>
               
@@ -321,7 +321,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -420,6 +420,12 @@
       </div>
     
 
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
     
 
   </div>
@@ -570,16 +576,28 @@
     
       pbOptions = {};
       
-          pbOptions.iconStyle = "icon-share";
+          pbOptions.iconStyle = "box";
       
           pbOptions.boxForm = "horizontal";
       
           pbOptions.position = "bottomCenter";
       
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+          pbOptions.networks = "Weibo,Douban,QQZone,Twitter,Facebook";
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 
