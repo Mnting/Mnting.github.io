@@ -1858,7 +1858,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #41ffff;
+  background: #c10eff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2977,5 +2977,5 @@ body {
   min-height: 500px;
 }
 * {
-  cursor: url("../images/mouse.ico"), auto;
+  cursor: url("../images/mouse.ico"), default;
 }
