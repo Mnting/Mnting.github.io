@@ -1858,7 +1858,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a6cbed;
+  background: #ff52ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2977,5 +2977,8 @@ body {
   min-height: 500px;
 }
 * {
-  cursor: url("../../images/mouse.ico"), auto;
+  cursor: url("../../images/point.cur"), auto;
+}
+:active {
+  cursor: url("../../images/pointthink.ani"), auto !important;
 }
