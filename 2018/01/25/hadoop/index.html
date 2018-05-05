@@ -80,7 +80,7 @@
 <meta property="og:site_name" content="Dreamer">
 <meta property="og:description" content="hadoop spark">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-05T08:39:35.124Z">
+<meta property="og:updated_time" content="2018-05-05T08:43:01.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hadoop spark启动和关闭服务注意事项">
 <meta name="twitter:description" content="hadoop spark">
@@ -320,7 +320,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  337
+                  345
                 </span>
               
 
@@ -368,19 +368,25 @@
 <p>export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop<br>export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop<br>export SPARK_HOME=/home/hadoop/app/spark-2.3.0-bin-    hadoop2.7<br>export SPARK_JAR=/home/hadoop/app/spark-2.3.0-bin-    hadoop2.7/jars/<em>.jar<br>export PATH=$SPARK_HOME/bin:$PATH<br>‘’’<br>**其中在添加.jar文件时由于新办将jar包分散成若干个小包  所以为/</em>.jars才能配置成功**</p>
 </blockquote>
 <p>问题二：<br>启动服务 若直接start-all.sh,master服务不能成功启动,<br>必须严格按照下面顺序,并且格式化namenode会新生成一个clusterID，会导致namenode和datanode中的clusterID不同<br>解决办法是删除/usr/local/hadoop/tmp/dfs/data目录下有残留的不兼容的数据。<br>故每次格式化namenode的时候选N</p>
-<p>hdfs namenode -format (hadoop namenode -format)选N</p>
+<p><strong>启动服务</strong><br>     hdfs namenode -format (hadoop namenode -format)选N</p>
 <pre><code>#进入hadoop 
 $cd  ./app/hadoop-2.4.1/sbin
-   #先启动HDFS
-   $./start-dfs.sh
-   #再启动YARN
-   $./start-yarn.sh    
+#先启动HDFS
+$./start-dfs.sh
+#再启动YARN
+$./start-yarn.sh    
 $ cd  /home/hadoop/app/spark-1.1.0-bin-hadoop2.4/sbin
 $ ./start-all.sh   
-</code></pre><p>#关闭Spark<br>$ cd /home/hadoop/app/spark-2.3.0-bin-hadoop2.7/sbin/<br>$ ./stop-all.sh<br>$cd /usr/local/hadoop/sbin </p>
-<p>#关闭YARN<br>$./stop-yarn.sh</p>
-<p>#最后关闭HDFS<br>$./stop-dfs.sh</p>
-
+</code></pre><p><strong>关闭服务</strong></p>
+<pre><code>#关闭Spark
+$ cd /home/hadoop/app/spark-2.3.0-bin-hadoop2.7/sbin/
+$ ./stop-all.sh
+$cd /usr/local/hadoop/sbin 
+#关闭YARN
+$./stop-yarn.sh
+#最后关闭HDFS
+$./stop-dfs.sh
+</code></pre>
       
     </div>
     
