@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://taotianhao.github.io",
+  "homepage": "https://mnting.github.io",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
