@@ -41,10 +41,10 @@ export default function Footer() {
               欢迎交流与合作
             </p>
             <a
-              href="mailto:hello@myinfo.com"
+              href="mailto:taotianhao1048@qq.com"
               className="text-sm text-primary hover:text-lilac-deep transition-colors duration-200"
             >
-              hello@myinfo.com
+              taotianhao1048@qq.com
             </a>
           </div>
         </div>
