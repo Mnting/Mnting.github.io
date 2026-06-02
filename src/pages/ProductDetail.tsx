@@ -43,22 +43,20 @@ export default function ProductDetail() {
         </ScrollReveal>
 
         {/* Markdown content */}
-        <ScrollReveal delay={100}>
-          <article className="prose prose-lg max-w-none
-            prose-headings:font-serif
-            prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-10 prose-h2:mb-4
-            prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
-            prose-p:leading-relaxed
-            prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-            prose-blockquote:border-l-primary/50 prose-blockquote:bg-secondary/30 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
-            prose-code:bg-secondary prose-code:text-foreground prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-            prose-hr:border-border
-          ">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {doc.rawContent}
-            </ReactMarkdown>
-          </article>
-        </ScrollReveal>
+        <article className="prose prose-lg max-w-none
+          prose-headings:font-serif
+          prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-10 prose-h2:mb-4
+          prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
+          prose-p:leading-relaxed
+          prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+          prose-blockquote:border-l-primary/50 prose-blockquote:bg-secondary/30 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
+          prose-code:bg-secondary prose-code:text-foreground prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+          prose-hr:border-border
+        ">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {doc.rawContent}
+          </ReactMarkdown>
+        </article>
 
         {/* Bottom back link */}
         <ScrollReveal delay={200}>
