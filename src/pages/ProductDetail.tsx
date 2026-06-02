@@ -43,15 +43,18 @@ export default function ProductDetail() {
         </ScrollReveal>
 
         {/* Markdown content */}
-        <article className="prose prose-lg max-w-none
-          prose-headings:font-serif
-          prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-10 prose-h2:mb-4
-          prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
-          prose-p:leading-relaxed
-          prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-          prose-blockquote:border-l-primary/50 prose-blockquote:bg-secondary/30 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
-          prose-code:bg-secondary prose-code:text-foreground prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-          prose-hr:border-border
+        <article className="text-foreground leading-relaxed space-y-4
+          [&_h1]:font-serif [&_h1]:text-3xl [&_h1]:font-semibold [&_h1]:mt-8 [&_h1]:mb-4
+          [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:mt-10 [&_h2]:mb-4
+          [&_h3]:font-serif [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-8 [&_h3]:mb-3
+          [&_p]:leading-relaxed [&_p]:my-3
+          [&_a]:text-primary [&_a]:no-underline hover:[&_a]:underline
+          [&_blockquote]:border-l-4 [&_blockquote]:border-primary/50 [&_blockquote]:bg-secondary/30 [&_blockquote]:py-2 [&_blockquote]:px-4 [&_blockquote]:rounded-r-lg [&_blockquote]:my-4
+          [&_code]:bg-secondary [&_code]:text-foreground [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm
+          [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:my-3
+          [&_li]:my-1
+          [&_hr]:border-border [&_hr]:my-8
+          [&_strong]:font-semibold
         ">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {doc.rawContent}
