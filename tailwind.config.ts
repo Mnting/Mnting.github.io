@@ -100,9 +100,48 @@ const config: Config = {
         "fade-in-up": "fade-in-up 0.8s ease-out forwards",
         "shimmer": "shimmer 3s linear infinite",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            '--tw-prose-body': 'hsl(var(--foreground))',
+            '--tw-prose-headings': 'hsl(var(--foreground))',
+            '--tw-prose-links': 'hsl(var(--primary))',
+            '--tw-prose-bold': 'hsl(var(--foreground))',
+            '--tw-prose-counters': 'hsl(var(--muted-foreground))',
+            '--tw-prose-bullets': 'hsl(var(--muted-foreground))',
+            '--tw-prose-hr': 'hsl(var(--border))',
+            '--tw-prose-quotes': 'hsl(var(--foreground))',
+            '--tw-prose-quote-borders': 'hsl(var(--primary))',
+            '--tw-prose-captions': 'hsl(var(--muted-foreground))',
+            '--tw-prose-code': 'hsl(var(--foreground))',
+            '--tw-prose-pre-code': 'hsl(var(--foreground))',
+            '--tw-prose-pre-bg': 'hsl(var(--secondary))',
+            '--tw-prose-th-borders': 'hsl(var(--border))',
+            '--tw-prose-td-borders': 'hsl(var(--border))',
+            h1: { fontFamily: '"Noto Serif SC", Georgia, serif', fontWeight: '600' },
+            h2: { fontFamily: '"Noto Serif SC", Georgia, serif', fontWeight: '600' },
+            h3: { fontFamily: '"Noto Serif SC", Georgia, serif', fontWeight: '600' },
+            'h1 a, h2 a, h3 a, h4 a, h5 a, h6 a': {
+              color: 'hsl(var(--primary))',
+              textDecoration: 'none',
+            },
+            blockquote: {
+              borderLeftColor: 'hsl(var(--primary) / 0.5)',
+              fontStyle: 'normal',
+            },
+            code: {
+              backgroundColor: 'hsl(var(--secondary))',
+              padding: '0.2em 0.4em',
+              borderRadius: '0.25rem',
+              fontWeight: '400',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 }
 
 export default config

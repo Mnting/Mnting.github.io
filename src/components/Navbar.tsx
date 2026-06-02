@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { path: '/', label: '首页' },
   { path: '/portfolio', label: '作品' },
   { path: '/blog', label: '日记' },
+  { path: '/product', label: '产品' },
   { path: '/photography', label: '摄影' },
 ]
 

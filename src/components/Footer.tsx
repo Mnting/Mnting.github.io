@@ -20,6 +20,7 @@ export default function Footer() {
               {[
                 { label: '作品集', path: '/portfolio' },
                 { label: '日记', path: '/blog' },
+                { label: '产品', path: '/product' },
                 { label: '摄影', path: '/photography' },
               ].map((link) => (
                 <a

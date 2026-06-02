@@ -6,6 +6,8 @@ import { CursorProvider } from '@/components/CustomCursor'
 import Home from '@/pages/Home'
 import Portfolio from '@/pages/Portfolio'
 import Blog from '@/pages/Blog'
+import ProductList from '@/pages/ProductList'
+import ProductDetail from '@/pages/ProductDetail'
 import Photography from '@/pages/Photography'
 
 function ScrollToTop() {
@@ -29,6 +31,8 @@ function Layout() {
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/product" element={<ProductList />} />
+          <Route path="/product/:slug" element={<ProductDetail />} />
           <Route path="/photography" element={<Photography />} />
         </Routes>
       </main>
