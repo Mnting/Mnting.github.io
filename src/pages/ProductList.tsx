@@ -16,10 +16,10 @@ export default function ProductList() {
               Product
             </p>
             <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 leading-tight">
-              产品
+              文档
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              产品相关文档与政策文件。透明、清晰、可信赖。
+              相关文档与政策文件。透明、清晰、可信赖。
             </p>
           </ScrollReveal>
         </div>

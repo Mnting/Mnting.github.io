@@ -24,7 +24,7 @@ export default function ProductDetail() {
           <Link to="/product">
             <Button variant="ghost" size="sm" className="gap-2 mb-8 -ml-3">
               <ArrowLeft size={14} />
-              返回产品文档
+              返回文档
             </Button>
           </Link>
         </ScrollReveal>
@@ -34,7 +34,7 @@ export default function ProductDetail() {
           <div className="mb-12">
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
               <FileText size={14} className="text-foreground" />
-              <span>产品文档</span>
+              <span>文档</span>
             </div>
             <h1 className="font-sans text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight">
               {doc.title}
@@ -67,7 +67,7 @@ export default function ProductDetail() {
             <Link to="/product">
               <Button variant="ghost" size="sm" className="gap-2">
                 <ArrowLeft size={14} />
-                返回产品文档列表
+                返回文档列表
               </Button>
             </Link>
           </div>

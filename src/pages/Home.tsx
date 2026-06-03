@@ -39,7 +39,7 @@ export default function Home() {
 
           <ScrollReveal delay={200}>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto mb-10">
-              这里是创意与技术的交汇点。探索作品、阅读日记、欣赏摄影——
+              这里是创意与技术的交汇点。探索作品、阅读随笔、欣赏摄影——
               每一帧都是对生活的热爱。
             </p>
           </ScrollReveal>
@@ -53,7 +53,7 @@ export default function Home() {
               </Link>
               <Link to="/blog">
                 <Button variant="default-light" size="lg">
-                  阅读日记
+                  阅读随笔
                 </Button>
               </Link>
             </div>
@@ -75,7 +75,7 @@ export default function Home() {
                 精选内容
               </h2>
               <p className="text-muted-foreground text-base max-w-md mx-auto">
-                最新作品、日记与摄影，发现更多精彩
+                最新作品、随笔与摄影，发现更多精彩
               </p>
             </div>
           </ScrollReveal>
@@ -98,7 +98,7 @@ export default function Home() {
             <ScrollReveal delay={200}>
               <Link to="/blog" className="group block">
                 <div className="relative overflow-hidden rounded-xl bg-soft-pink p-8 h-64 flex flex-col justify-end transition-all duration-300 hover:-translate-y-1 shadow-card">
-                  <h3 className="font-sans text-xl font-bold text-foreground mb-2">日记</h3>
+                  <h3 className="font-sans text-xl font-bold text-foreground mb-2">随笔</h3>
                   <p className="text-sm text-muted-foreground">思考、记录与生活随笔</p>
                   <span className="text-sm text-foreground mt-3 inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     阅读更多 →

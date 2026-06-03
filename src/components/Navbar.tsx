@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils'
 const NAV_LINKS = [
   { path: '/', label: '首页' },
   { path: '/portfolio', label: '作品' },
-  { path: '/blog', label: '日记' },
-  { path: '/product', label: '产品' },
+  { path: '/blog', label: '随笔' },
+  { path: '/product', label: '文档' },
   { path: '/photography', label: '摄影' },
 ]
 
@@ -44,7 +44,7 @@ export default function Navbar() {
             to="/"
             className="font-sans text-xl font-bold tracking-[-0.011em] text-foreground transition-colors duration-300"
           >
-            MyInfo
+            白日梦想家
           </Link>
 
           {/* Desktop Nav */}

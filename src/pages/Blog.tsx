@@ -76,7 +76,7 @@ export default function Blog() {
               Journal
             </p>
             <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 leading-tight">
-              日记
+              随笔
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
               记录技术探索、创作思考与生活感悟。每一篇文字都是成长的足迹。
