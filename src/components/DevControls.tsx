@@ -48,6 +48,21 @@ const GROUPS: {
     ],
   },
   {
+    id: 'ink',
+    label: '水墨效果',
+    icon: '🖌️',
+    fields: [
+      { key: 'trailNoiseAmp', label: '边缘噪声幅度', min: 0, max: 80, step: 1 },
+      { key: 'trailNoiseFreq', label: '噪声频率', min: 0.01, max: 0.2, step: 0.005 },
+      { key: 'trailNoiseSpeed', label: '噪声变化速度', min: 0.1, max: 3, step: 0.1 },
+      { key: 'trailLayers', label: '叠加层数', min: 1, max: 5, step: 1 },
+      { key: 'blobCount', label: '色团数量', min: 2, max: 8, step: 1 },
+      { key: 'blobSize', label: '色团半径', min: 40, max: 300, step: 5 },
+      { key: 'blobDriftSpeed', label: '色团漂移速度', min: 0.1, max: 3, step: 0.1 },
+      { key: 'blurAmount', label: '晕染模糊', min: 0, max: 30, step: 1 },
+    ],
+  },
+  {
     id: 'plane',
     label: '飞机',
     icon: '✈️',
