@@ -1,4 +1,69 @@
-import matter from 'gray-matter'
+// ============================================================
+// Simple browser-compatible frontmatter parser
+// (replaces gray-matter to avoid Node.js Buffer dependency)
+// ============================================================
+
+interface FrontmatterResult {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  data: Record<string, any>
+  content: string
+}
+
+function parseFrontmatter(raw: string): FrontmatterResult {
+  if (!raw.startsWith('---\n') && !raw.startsWith('---\r\n')) {
+    return { data: {}, content: raw }
+  }
+
+  const endMatch = raw.match(/\n---\s*\n/)
+  if (!endMatch) {
+    return { data: {}, content: raw }
+  }
+
+  const endIndex = endMatch.index!
+  const fmBlock = raw.slice(4, endIndex) // skip opening "---\n"
+  const body = raw.slice(endIndex + endMatch[0].length)
+
+  const data: Record<string, unknown> = {}
+  const lines = fmBlock.split('\n')
+  let i = 0
+
+  while (i < lines.length) {
+    const line = lines[i]
+    const match = line.match(/^(\w[\w-]*):\s*(.*)/)
+    if (match) {
+      const key = match[1]
+      const value = match[2].trim()
+      // Check if next lines are indented list items
+      if (i + 1 < lines.length && /^\s{2,}-\s/.test(lines[i + 1])) {
+        const arr: string[] = []
+        if (value) arr.push(value)
+        i++
+        while (i < lines.length && /^\s{2,}-\s/.test(lines[i])) {
+          arr.push(lines[i].replace(/^\s{2,}-\s*/, ''))
+          i++
+        }
+        data[key] = arr
+        continue
+      }
+      // Inline array: [a, b, c]
+      if (value.startsWith('[') && value.endsWith(']')) {
+        data[key] = value.slice(1, -1).split(',').map((s) => s.trim())
+      } else if (value === 'true' || value === 'false') {
+        data[key] = value === 'true'
+      } else if (/^-?\d+(\.\d+)?$/.test(value)) {
+        data[key] = parseFloat(value)
+      } else {
+        data[key] = value
+      }
+    }
+    i++
+  }
+
+  return { data, content: body }
+}
+
+// Type compatible with what gray-matter returned
+const matter = (input: string): FrontmatterResult => parseFrontmatter(input)
 
 // ============================================================
 // Shared helpers
