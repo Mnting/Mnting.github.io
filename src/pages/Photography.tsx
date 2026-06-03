@@ -2,59 +2,7 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { MapPin, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useCursor } from '@/components/CustomCursor'
-
-interface Photo {
-  id: string
-  src: string
-  title: string
-  location: string
-  date: string
-}
-
-const photos: Photo[] = [
-  {
-    id: '1',
-    src: '/images/mountain-mist.png',
-    title: '晨雾中的山峦',
-    location: '黄山, 安徽',
-    date: '2026.04.20',
-  },
-  {
-    id: '2',
-    src: '/images/city-night.png',
-    title: '城市夜景',
-    location: '上海, 中国',
-    date: '2026.03.15',
-  },
-  {
-    id: '3',
-    src: '/images/lilac-garden.png',
-    title: '丁香花开',
-    location: '植物园, 北京',
-    date: '2026.04.10',
-  },
-  {
-    id: '4',
-    src: '/images/ocean-sunset.png',
-    title: '海上日落',
-    location: '三亚, 海南',
-    date: '2026.02.28',
-  },
-  {
-    id: '5',
-    src: '/images/forest-path.png',
-    title: '森林小径',
-    location: '张家界, 湖南',
-    date: '2026.03.22',
-  },
-  {
-    id: '6',
-    src: '/images/architecture-shadow.png',
-    title: '光影几何',
-    location: '深圳, 广东',
-    date: '2026.01.18',
-  },
-]
+import { photos } from '@/lib/markdown'
 
 export default function Photography() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -169,8 +117,6 @@ export default function Photography() {
   }, [isDragging, dragOffset, goNext, goPrev])
 
   const photo = photos[currentIndex]
-  const prevIndex = ((currentIndex - 1) + photos.length) % photos.length
-  const nextIndex = (currentIndex + 1) % photos.length
 
   const transitionScale = isTransitioning ? 1.08 : 1
 

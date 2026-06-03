@@ -1,3 +1,9 @@
+---
+title: GreyRhino 使用条款
+date: 2026-05-21
+description: 欢迎使用 GreyRhino，本使用条款旨在明确用户与本应用之间的权利与义务。
+---
+
 # GreyRhino 使用条款
 
 > 更新日期：2026 年 5 月 21 日

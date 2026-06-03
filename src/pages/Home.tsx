@@ -2,6 +2,7 @@ import { ArrowDown } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import ScrollReveal from '@/components/ScrollReveal'
 import { Button } from '@/components/ui/button'
+import { HeroIllustrationWithControls } from '@/components/HeroIllustration'
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
             background: 'radial-gradient(80.17% 109.2% at 52.12% 62.54%, rgb(208, 178, 255) 0%, rgb(198, 236, 233) 35.28%, rgb(153, 255, 249) 96.56%)',
           }}
         />
+
+        {/* Decorative illustration */}
+        <HeroIllustrationWithControls />
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">

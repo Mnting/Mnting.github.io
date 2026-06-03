@@ -5,7 +5,9 @@ import Footer from '@/components/Footer'
 import { CursorProvider } from '@/components/CustomCursor'
 import Home from '@/pages/Home'
 import Portfolio from '@/pages/Portfolio'
+import PortfolioDetail from '@/pages/PortfolioDetail'
 import Blog from '@/pages/Blog'
+import BlogDetail from '@/pages/BlogDetail'
 import ProductList from '@/pages/ProductList'
 import ProductDetail from '@/pages/ProductDetail'
 import Photography from '@/pages/Photography'
@@ -29,7 +31,9 @@ function Layout() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:slug" element={<PortfolioDetail />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/product" element={<ProductList />} />
           <Route path="/product/:slug" element={<ProductDetail />} />
           <Route path="/photography" element={<Photography />} />

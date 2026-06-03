@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -23,13 +25,13 @@ export default function Footer() {
                 { label: '文档', path: '/product' },
                 { label: '摄影', path: '/photography' },
               ].map((link) => (
-                <a
+                <Link
                   key={link.path}
-                  href={link.path}
+                  to={link.path}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 w-fit"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

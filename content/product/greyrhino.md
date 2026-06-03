@@ -1,3 +1,9 @@
+---
+title: GreyRhino隐私政策
+date: 2026-05-21
+description: 本隐私政策旨在清晰说明本应用如何处理你的数据。
+---
+
 # GreyRhino隐私政策
 
 > 更新日期：2026 年 5 月 21 日

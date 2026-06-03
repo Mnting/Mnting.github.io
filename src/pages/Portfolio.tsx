@@ -1,44 +1,9 @@
-import { ExternalLink, Github } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ExternalLink, Github, ArrowRight } from 'lucide-react'
 import ScrollReveal from '@/components/ScrollReveal'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-
-interface Project {
-  title: string
-  description: string
-  tags: string[]
-  link?: string
-  github?: string
-  color: string
-}
-
-const projects: Project[] = [
-  {
-    title: '智能仓储管理系统 WCS',
-    description: '基于 .NET 和 WPF 构建的仓库控制系统，实现自动化设备调度、任务分配与实时监控，显著提升仓储运营效率。',
-    tags: ['C#', 'WPF', '.NET', 'WCS', '自动化'],
-    color: 'from-blue-500/10 to-indigo-500/10',
-  },
-  {
-    title: 'TouchDesigner 视觉生成器',
-    description: '使用 TouchDesigner 构建的实时视觉生成系统，融合粒子系统、噪声算法与音频反应，打造沉浸式数字艺术体验。',
-    tags: ['TouchDesigner', 'GLSL', '创意编程', '实时渲染'],
-    color: 'from-purple-500/10 to-pink-500/10',
-  },
-  {
-    title: '个人博客系统',
-    description: '使用 React + Three.js 构建的个人博客，集成点云动画、响应式设计与内容管理，兼具美学与性能。',
-    tags: ['React', 'TypeScript', 'Three.js', 'Tailwind CSS'],
-    link: '#',
-    color: 'from-emerald-500/10 to-teal-500/10',
-  },
-  {
-    title: '数据可视化仪表盘',
-    description: '面向企业级应用的数据可视化平台，支持多种图表类型、实时数据流与自定义主题，帮助团队快速洞察数据。',
-    tags: ['React', 'D3.js', 'WebSocket', 'Dashboard'],
-    color: 'from-orange-500/10 to-amber-500/10',
-  },
-]
+import { portfolioProjects } from '@/lib/markdown'
 
 export default function Portfolio() {
   return (
@@ -65,8 +30,8 @@ export default function Portfolio() {
       <section className="pb-24 md:pb-32">
         <div className="page-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <ScrollReveal key={project.title} delay={index * 100}>
+            {portfolioProjects.map((project, index) => (
+              <ScrollReveal key={project.slug} delay={index * 100}>
                 <Card className={`group relative overflow-hidden border-transparent bg-gradient-to-br ${project.color} hover:border-border transition-all duration-500`}>
                   <CardHeader>
                     <CardTitle className="text-xl">{project.title}</CardTitle>
@@ -86,28 +51,32 @@ export default function Portfolio() {
                         </span>
                       ))}
                     </div>
-                    
+
                     {/* Links */}
-                    {(project.link || project.github) && (
-                      <div className="flex items-center gap-3">
-                        {project.link && (
-                          <a href={project.link} target="_blank" rel="noopener noreferrer">
-                            <Button variant="ghost" size="sm" className="gap-1.5">
-                              <ExternalLink size={14} />
-                              预览
-                            </Button>
-                          </a>
-                        )}
-                        {project.github && (
-                          <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            <Button variant="ghost" size="sm" className="gap-1.5">
-                              <Github size={14} />
-                              源码
-                            </Button>
-                          </a>
-                        )}
-                      </div>
-                    )}
+                    <div className="flex items-center gap-3">
+                      <Link to={`/portfolio/${project.slug}`}>
+                        <Button variant="ghost" size="sm" className="gap-1.5">
+                          详情
+                          <ArrowRight size={14} />
+                        </Button>
+                      </Link>
+                      {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer">
+                          <Button variant="ghost" size="sm" className="gap-1.5">
+                            <ExternalLink size={14} />
+                            预览
+                          </Button>
+                        </a>
+                      )}
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Button variant="ghost" size="sm" className="gap-1.5">
+                            <Github size={14} />
+                            源码
+                          </Button>
+                        </a>
+                      )}
+                    </div>
                   </CardContent>
                 </Card>
               </ScrollReveal>

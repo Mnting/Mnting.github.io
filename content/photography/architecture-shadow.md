@@ -1,0 +1,9 @@
+---
+title: 光影几何
+location: 深圳, 广东
+date: 2026-01-18
+image: /images/architecture-shadow.png
+order: 6
+---
+
+深圳现代建筑的几何光影，线与面的抽象诗篇。
