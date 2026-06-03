@@ -47,10 +47,10 @@ export default function Portfolio() {
       <section className="pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="page-container">
           <ScrollReveal>
-            <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
+            <p className="text-sm font-medium tracking-widest text-foreground uppercase mb-4">
               Portfolio
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 leading-tight">
+            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 leading-tight">
               作品集
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
@@ -67,7 +67,7 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
               <ScrollReveal key={project.title} delay={index * 100}>
-                <Card className={`group relative overflow-hidden border-transparent bg-gradient-to-br ${project.color} hover:border-primary/20 transition-all duration-500`}>
+                <Card className={`group relative overflow-hidden border-transparent bg-gradient-to-br ${project.color} hover:border-border transition-all duration-500`}>
                   <CardHeader>
                     <CardTitle className="text-xl">{project.title}</CardTitle>
                     <CardDescription className="text-sm leading-relaxed pt-1">
@@ -80,7 +80,7 @@ export default function Portfolio() {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2.5 py-1 text-xs font-medium rounded-full bg-foreground/5 text-muted-foreground border border-border/50"
+                          className="px-2.5 py-1 text-xs font-medium rounded-md bg-whisper-gray text-muted-foreground"
                         >
                           {tag}
                         </span>

@@ -1,13 +1,13 @@
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-  
+
   return (
-    <footer className="border-t border-border/40 bg-secondary/30">
+    <footer className="border-t border-border bg-whisper-gray">
       <div className="page-container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div className="space-y-3">
-            <h3 className="font-serif text-lg font-semibold text-foreground">MyInfo</h3>
+            <h3 className="font-sans text-lg font-bold text-foreground">MyInfo</h3>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               用代码构建世界，用文字记录思考，用镜头捕捉光影。这里是创意与生活的交汇点。
             </p>
@@ -26,7 +26,7 @@ export default function Footer() {
                 <a
                   key={link.path}
                   href={link.path}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200 w-fit"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 w-fit"
                 >
                   {link.label}
                 </a>
@@ -42,7 +42,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:taotianhao1048@qq.com"
-              className="text-sm text-primary hover:text-lilac-deep transition-colors duration-200"
+              className="text-sm text-foreground hover:text-muted-foreground transition-colors duration-200"
             >
               taotianhao1048@qq.com
             </a>

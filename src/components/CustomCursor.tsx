@@ -63,7 +63,7 @@ export function CursorProvider({ children }: { children: ReactNode }) {
   }
 
   const sizeClass = {
-    default: 'w-6 h-6',
+    default: 'w-5 h-5',
     hover: 'w-5 h-5',
     click: 'w-4 h-4',
     'drag-left': 'w-10 h-6 rounded-full',
@@ -71,11 +71,11 @@ export function CursorProvider({ children }: { children: ReactNode }) {
   }[cursorState]
 
   const bgClass = {
-    default: 'bg-lilac/80',
-    hover: 'bg-lilac scale-150',
-    click: 'bg-lilac-deep scale-75',
-    'drag-left': 'bg-lilac/90',
-    'drag-right': 'bg-lilac/90',
+    default: 'bg-[#111111]/70',
+    hover: 'bg-[#111111]/90 scale-150',
+    click: 'bg-[#111111] scale-75',
+    'drag-left': 'bg-[#111111]/80',
+    'drag-right': 'bg-[#111111]/80',
   }[cursorState]
 
   const arrowContent = cursorState === 'drag-left' ? '←' : cursorState === 'drag-right' ? '→' : null

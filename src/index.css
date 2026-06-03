@@ -4,101 +4,77 @@
 
 @layer base {
   :root {
-    /* Lilac-inspired light theme */
-    --background: 40 30% 99%;
-    --foreground: 270 10% 15%;
-    
+    /* Amplemarket color palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+
     --card: 0 0% 100%;
-    --card-foreground: 270 10% 15%;
-    
+    --card-foreground: 0 0% 7%;
+
     --popover: 0 0% 100%;
-    --popover-foreground: 270 10% 15%;
-    
-    /* Primary: vibrant lilac purple */
-    --primary: 285 70% 50%;
+    --popover-foreground: 0 0% 7%;
+
+    /* Primary = Midnight Ink (no distinct CTA color per Amplemarket) */
+    --primary: 0 0% 7%;
     --primary-foreground: 0 0% 100%;
-    
-    /* Secondary: warm lavender */
-    --secondary: 280 30% 94%;
-    --secondary-foreground: 285 40% 30%;
-    
+
+    /* Secondary = Whisper Gray */
+    --secondary: 40 14% 95%;
+    --secondary-foreground: 0 0% 7%;
+
     /* Muted */
-    --muted: 280 20% 92%;
-    --muted-foreground: 280 10% 50%;
-    
-    /* Accent: warm amber/gold */
-    --accent: 44 70% 55%;
-    --accent-foreground: 270 10% 15%;
-    
-    /* Destructive */
-    --destructive: 0 70% 55%;
+    --muted: 40 14% 95%;
+    --muted-foreground: 30 1% 43%;
+
+    /* Accent = Phoenix Orange */
+    --accent: 14 90% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive = LeadGen Red */
+    --destructive: 14 73% 57%;
     --destructive-foreground: 0 0% 100%;
-    
-    /* Lilac custom tokens */
-    --lilac-light: 285 72% 80%;
-    --lilac: 285 70% 58%;
-    --lilac-deep: 285 65% 35%;
-    --lilac-petal: 290 65% 90%;
-    
-    /* Borders & inputs */
-    --border: 280 15% 85%;
-    --input: 280 15% 85%;
-    --ring: 285 65% 55%;
-    
+
+    /* Amplemarket named colors */
+    --color-midnight-ink: 0 0% 7%;
+    --color-canvas-white: 0 0% 100%;
+    --color-surface-charcoal: 30 3% 15%;
+    --color-muted-ash: 30 1% 43%;
+    --color-whisper-gray: 40 14% 95%;
+    --color-light-taupe: 30 4% 92%;
+    --color-phoenix-orange: 14 90% 48%;
+    --color-cyan-glow: 173 100% 80%;
+    --color-deep-indigo: 250 79% 16%;
+    --color-petal-pink: 323 100% 92%;
+    --color-mint-green: 107 71% 82%;
+    --color-canary-yellow: 49 100% 80%;
+    --color-subtle-lavender: 250 78% 87%;
+    --color-midnight-violet: 250 47% 26%;
+    --color-engagement-gold: 40 95% 70%;
+    --color-leadgen-red: 14 73% 57%;
+    --color-intelligence-blue: 212 91% 59%;
+    --color-deliver-green: 157 57% 55%;
+
+    /* Borders & inputs - Midnight Ink at 8% */
+    --border: 0 0% 7% / 0.08;
+    --input: 0 0% 7% / 0.08;
+    --ring: 0 0% 7% / 0.20;
+
     /* Radius */
     --radius: 0.75rem;
-    
-    /* Design tokens */
-    --gradient-hero: linear-gradient(180deg, hsl(270 30% 5%) 0%, hsl(285 40% 12%) 100%);
-    --gradient-lilac: linear-gradient(135deg, hsl(285 65% 55%), hsl(285 70% 78%));
-    --gradient-subtle: linear-gradient(180deg, hsl(40 30% 98%), hsl(280 20% 95%));
-    --shadow-card: 0 1px 3px hsl(285 20% 60% / 0.08), 0 4px 24px hsl(285 20% 60% / 0.06);
-    --shadow-elevated: 0 4px 12px hsl(285 20% 50% / 0.08), 0 8px 40px hsl(285 20% 50% / 0.04);
-    --shadow-glow: 0 0 45px hsl(285 70% 72% / 0.35);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
 
-  .dark {
-    --background: 270 25% 4%;
-    --foreground: 40 30% 96%;
-    
-    --card: 270 20% 8%;
-    --card-foreground: 40 30% 96%;
-    
-    --popover: 270 20% 8%;
-    --popover-foreground: 40 30% 96%;
-    
-    --primary: 285 75% 68%;
-    --primary-foreground: 270 25% 4%;
-    
-    --secondary: 280 20% 12%;
-    --secondary-foreground: 40 30% 96%;
-    
-    --muted: 280 15% 14%;
-    --muted-foreground: 280 10% 65%;
-    
-    --accent: 44 70% 55%;
-    --accent-foreground: 270 25% 4%;
-    
-    --destructive: 0 60% 45%;
-    --destructive-foreground: 40 30% 96%;
-    
-    --lilac-light: 285 70% 78%;
-    --lilac: 285 75% 62%;
-    --lilac-deep: 285 60% 45%;
-    --lilac-petal: 290 55% 82%;
-    
-    --border: 280 15% 18%;
-    --input: 280 15% 18%;
-    --ring: 285 75% 62%;
-    
-    --gradient-hero: linear-gradient(180deg, hsl(270 30% 2%) 0%, hsl(285 35% 6%) 100%);
-    --gradient-lilac: linear-gradient(135deg, hsl(285 75% 62%), hsl(285 70% 78%));
-    --gradient-subtle: linear-gradient(180deg, hsl(270 25% 4%), hsl(280 20% 10%));
-    --shadow-card: 0 1px 3px hsl(285 20% 15% / 0.4), 0 4px 24px hsl(285 20% 8% / 0.3);
-    --shadow-elevated: 0 4px 12px hsl(285 20% 12% / 0.5), 0 8px 40px hsl(285 20% 8% / 0.4);
-    --shadow-glow: 0 0 50px hsl(285 75% 62% / 0.5), 0 0 100px hsl(285 70% 55% / 0.25);
+    /* Amplemarket gradients */
+    --gradient-phoenix: radial-gradient(386.06% 162.79% at -13.19% -17.1%, rgb(232, 64, 13) 0%, rgb(255, 238, 216) 26.16%, rgb(208, 178, 255) 84.15%);
+    --gradient-cyan: radial-gradient(80.17% 109.2% at 52.12% 62.54%, rgb(208, 178, 255) 0%, rgb(198, 236, 233) 35.28%, rgb(153, 255, 249) 96.56%);
+
+    /* Amplemarket shadows — subtle, diluted */
+    --shadow-card: rgba(17, 17, 17, 0.02) 0px -6px 6px 0px, rgba(17, 17, 17, 0.01) 0px -23px 9px 0px;
+    --shadow-elevated: rgba(17, 17, 17, 0.04) 0px 1px 2px 0px, rgba(17, 17, 17, 0.04) 0px 4px 8px 0px;
+    --shadow-nav: rgba(17, 17, 17, 0.05) 0px 0px 1px 0px, rgba(17, 17, 17, 0.04) 1px 1px 1px 0px;
+
+    /* Layout tokens */
+    --section-gap: 56px;
+    --card-padding: 20px;
+    --element-gap: 8px;
   }
 }
 
@@ -111,13 +87,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
-  h1, h2, h3, h4 {
-    @apply font-serif tracking-tight;
-  }
 
   ::selection {
-    background: hsl(var(--lilac) / 0.25);
+    background: hsl(var(--color-midnight-ink) / 0.12);
     color: hsl(var(--foreground));
   }
 }
@@ -126,27 +98,9 @@
   .page-container {
     @apply container max-w-5xl mx-auto px-6 md:px-8;
   }
-  
+
   .section-spacing {
-    @apply py-24 md:py-32;
-  }
-  
-  .text-gradient {
-    background: var(--gradient-lilac);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .link-underline {
-    @apply relative;
-  }
-  .link-underline::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-px bg-primary transition-all duration-300;
-  }
-  .link-underline:hover::after {
-    @apply w-full;
+    @apply py-[56px] md:py-[56px];
   }
 }
 
@@ -156,16 +110,4 @@
   .animation-delay-300 { animation-delay: 0.3s; }
   .animation-delay-400 { animation-delay: 0.4s; }
   .animation-delay-500 { animation-delay: 0.5s; }
-  
-  .text-stroke {
-    -webkit-text-stroke: 2px hsl(var(--lilac));
-    -webkit-text-fill-color: transparent;
-  }
-  .text-stroke-thin {
-    -webkit-text-stroke: 1px hsl(var(--lilac));
-    -webkit-text-fill-color: transparent;
-  }
-  .text-glow {
-    text-shadow: 0 0 20px hsl(var(--lilac) / 0.4), 0 0 40px hsl(var(--lilac) / 0.2);
-  }
 }

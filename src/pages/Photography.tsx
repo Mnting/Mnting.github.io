@@ -175,7 +175,7 @@ export default function Photography() {
   const transitionScale = isTransitioning ? 1.08 : 1
 
   return (
-    <div className="fixed inset-0 pt-16 md:pt-20 bg-[hsl(270,25%,2%)] overflow-hidden select-none">
+    <div className="fixed inset-0 pt-16 md:pt-20 bg-canvas-white overflow-hidden select-none">
       {/* Drag direction lines */}
       <DragLines visible={isDragging && !lightboxOpen} />
 
@@ -243,7 +243,7 @@ export default function Photography() {
                 {photo.title.split('').map((char, i) => (
                   <span
                     key={i}
-                    className="inline-block font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white drop-shadow-lg"
+                    className="inline-block font-sans text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground"
                     style={{
                       animation: infoVisible ? `charFadeIn 0.4s ease ${0.05 + i * 0.04}s both` : 'none',
                     }}
@@ -254,14 +254,14 @@ export default function Photography() {
               </h2>
 
               {/* Date with + decorations */}
-              <div className="flex items-center gap-3 text-white/60 text-sm md:text-base font-light tracking-[0.3em] uppercase">
-                <span className="text-lilac text-lg">+</span>
+              <div className="flex items-center gap-3 text-muted-foreground text-sm md:text-base font-light tracking-[0.3em] uppercase">
+                <span className="text-phoenix-orange text-lg">+</span>
                 <span>{photo.date}</span>
-                <span className="text-lilac text-lg">+</span>
+                <span className="text-phoenix-orange text-lg">+</span>
               </div>
 
               {/* Location */}
-              <p className="flex items-center gap-1.5 mt-2 text-white/40 text-xs tracking-widest uppercase">
+              <p className="flex items-center gap-1.5 mt-2 text-muted-foreground/40 text-xs tracking-widest uppercase">
                 <MapPin size={10} />
                 {photo.location}
               </p>
@@ -276,7 +276,7 @@ export default function Photography() {
               onClick={goPrev}
               onMouseEnter={() => setCursorState('hover')}
               onMouseLeave={() => setCursorState('default')}
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/5 hover:bg-white/10 text-white/40 hover:text-white/80 backdrop-blur-sm border border-white/10 hover:border-lilac/30 transition-all duration-300"
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-whisper-gray hover:bg-taupe-light text-muted-foreground hover:text-foreground border border-border transition-all duration-300"
             >
               <ChevronLeft size={24} />
             </button>
@@ -284,7 +284,7 @@ export default function Photography() {
               onClick={goNext}
               onMouseEnter={() => setCursorState('hover')}
               onMouseLeave={() => setCursorState('default')}
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/5 hover:bg-white/10 text-white/40 hover:text-white/80 backdrop-blur-sm border border-white/10 hover:border-lilac/30 transition-all duration-300"
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-whisper-gray hover:bg-taupe-light text-muted-foreground hover:text-foreground border border-border transition-all duration-300"
             >
               <ChevronRight size={24} />
             </button>
@@ -301,7 +301,7 @@ export default function Photography() {
               onMouseLeave={() => setCursorState('default')}
               className="w-2 h-2 rounded-full transition-all duration-500"
               style={{
-                backgroundColor: i === currentIndex ? 'hsl(var(--lilac))' : 'rgba(255,255,255,0.2)',
+                backgroundColor: i === currentIndex ? '#111111' : 'rgba(17,17,17,0.15)',
                 transform: i === currentIndex ? 'scale(1.5)' : 'scale(1)',
               }}
             />
@@ -313,7 +313,7 @@ export default function Photography() {
           onClick={() => setLightboxOpen(true)}
           onMouseEnter={() => setCursorState('hover')}
           onMouseLeave={() => setCursorState('default')}
-          className="absolute top-6 right-6 p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white/40 hover:text-white/80 backdrop-blur-sm border border-white/10 hover:border-lilac/30 transition-all duration-300 z-10"
+          className="absolute top-6 right-6 p-2.5 rounded-full bg-whisper-gray hover:bg-taupe-light text-muted-foreground hover:text-foreground border border-border transition-all duration-300 z-10"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 3 21 3 21 9" />
@@ -324,8 +324,8 @@ export default function Photography() {
         </button>
 
         {/* Counter */}
-        <div className="absolute top-6 left-6 text-white/30 text-xs tracking-[0.3em] font-light z-10">
-          <span className="text-lilac/70">{String(currentIndex + 1).padStart(2, '0')}</span>
+        <div className="absolute top-6 left-6 text-muted-foreground text-xs tracking-[0.3em] font-light z-10">
+          <span className="text-phoenix-orange/70">{String(currentIndex + 1).padStart(2, '0')}</span>
           <span className="mx-2">/</span>
           <span>{String(photos.length).padStart(2, '0')}</span>
         </div>
@@ -334,18 +334,18 @@ export default function Photography() {
       {/* Lightbox */}
       {lightboxOpen && createPortal(
         <div
-          className="fixed inset-0 z-[100] bg-black/98 backdrop-blur-2xl flex items-center justify-center"
+          className="fixed inset-0 z-[100] bg-white/98 backdrop-blur-2xl flex items-center justify-center"
           onClick={() => setLightboxOpen(false)}
         >
           <button
-            className="absolute top-6 right-6 p-3 rounded-full bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-colors z-10"
+            className="absolute top-6 right-6 p-3 rounded-full bg-whisper-gray hover:bg-taupe-light text-muted-foreground hover:text-foreground transition-colors z-10"
             onClick={() => setLightboxOpen(false)}
           >
             <X size={22} />
           </button>
 
-          <div className="absolute top-6 left-6 text-white/30 text-xs tracking-[0.3em] z-10">
-            <span className="text-lilac/70">{String(currentIndex + 1).padStart(2, '0')}</span>
+          <div className="absolute top-6 left-6 text-muted-foreground text-xs tracking-[0.3em] z-10">
+            <span className="text-phoenix-orange/70">{String(currentIndex + 1).padStart(2, '0')}</span>
             <span className="mx-2">/</span>
             <span>{String(photos.length).padStart(2, '0')}</span>
           </div>
@@ -353,7 +353,7 @@ export default function Photography() {
           <div className="flex items-center gap-4 md:gap-8 w-full max-w-[90vw] max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={(e) => { e.stopPropagation(); goPrev() }}
-              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/40 hover:text-white/80 transition-colors shrink-0"
+              className="p-2 rounded-full bg-whisper-gray hover:bg-taupe-light text-muted-foreground hover:text-foreground transition-colors shrink-0"
             >
               <ChevronLeft size={28} />
             </button>
@@ -372,18 +372,18 @@ export default function Photography() {
 
             <button
               onClick={(e) => { e.stopPropagation(); goNext() }}
-              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/40 hover:text-white/80 transition-colors shrink-0"
+              className="p-2 rounded-full bg-whisper-gray hover:bg-taupe-light text-muted-foreground hover:text-foreground transition-colors shrink-0"
             >
               <ChevronRight size={28} />
             </button>
           </div>
 
           {/* Info bar */}
-          <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 to-transparent">
+          <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-white/90 to-transparent">
             <div className="max-w-3xl mx-auto flex items-center justify-between">
               <div>
-                <h3 className="text-white font-serif text-xl md:text-2xl font-semibold">{photo.title}</h3>
-                <div className="flex items-center gap-4 mt-1 text-white/50 text-xs tracking-widest">
+                <h3 className="text-foreground font-sans text-xl md:text-2xl font-bold">{photo.title}</h3>
+                <div className="flex items-center gap-4 mt-1 text-muted-foreground text-xs tracking-widest">
                   <span className="flex items-center gap-1"><MapPin size={10} />{photo.location}</span>
                   <span>{photo.date}</span>
                 </div>
@@ -414,7 +414,7 @@ function BorderFrames({ active }: { active: boolean }) {
           key={i}
           className="absolute inset-0 pointer-events-none z-[1]"
           style={{
-            border: '1px solid rgba(255,255,255,0.08)',
+            border: '1px solid rgba(17,17,17,0.08)',
             borderRadius: '2vmin',
             transform: `scale(${scale})`,
             opacity: active ? [0.5, 0.3, 0.15][i] : 0,
@@ -442,8 +442,8 @@ function DragLines({ visible }: { visible: boolean }) {
         <div className="flex items-center h-full animate-dragline-right">
           {Array.from({ length: 20 }).map((_, i) => (
             <div key={i} className="flex items-center shrink-0 mx-4">
-              <span className="text-lilac/40 text-xs tracking-[0.5em] font-light">DRAG</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--lilac) / 0.4)" strokeWidth="1.5" className="mx-2">
+              <span className="text-muted-foreground/40 text-xs tracking-[0.5em] font-light">DRAG</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--color-muted-ash) / 0.4)" strokeWidth="1.5" className="mx-2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </div>
@@ -463,7 +463,7 @@ function DragLines({ visible }: { visible: boolean }) {
         <div className="flex items-center h-full animate-dragline-left">
           {Array.from({ length: 20 }).map((_, i) => (
             <div key={i} className="flex items-center shrink-0 mx-4">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--lilac) / 0.4)" strokeWidth="1.5" className="mx-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--color-muted-ash) / 0.4)" strokeWidth="1.5" className="mx-2">
                 <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>
               <span className="text-lilac/40 text-xs tracking-[0.5em] font-light">DRAG</span>
@@ -484,8 +484,8 @@ function DragLines({ visible }: { visible: boolean }) {
         <div className="flex flex-col items-center w-full animate-dragline-down">
           {Array.from({ length: 15 }).map((_, i) => (
             <div key={i} className="flex flex-col items-center shrink-0 my-3" style={{ writingMode: 'vertical-lr' }}>
-              <span className="text-lilac/40 text-xs tracking-[0.5em] font-light">DRAG</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--lilac) / 0.4)" strokeWidth="1.5" className="my-2" style={{ transform: 'rotate(90deg)' }}>
+              <span className="text-muted-foreground/40 text-xs tracking-[0.5em] font-light">DRAG</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--color-muted-ash) / 0.4)" strokeWidth="1.5" className="my-2" style={{ transform: 'rotate(90deg)' }}>
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </div>
@@ -505,7 +505,7 @@ function DragLines({ visible }: { visible: boolean }) {
         <div className="flex flex-col items-center w-full animate-dragline-up">
           {Array.from({ length: 15 }).map((_, i) => (
             <div key={i} className="flex flex-col items-center shrink-0 my-3" style={{ writingMode: 'vertical-lr' }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--lilac) / 0.4)" strokeWidth="1.5" className="my-2" style={{ transform: 'rotate(-90deg)' }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--color-muted-ash) / 0.4)" strokeWidth="1.5" className="my-2" style={{ transform: 'rotate(-90deg)' }}>
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
               <span className="text-lilac/40 text-xs tracking-[0.5em] font-light">DRAG</span>

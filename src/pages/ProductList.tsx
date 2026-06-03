@@ -12,10 +12,10 @@ export default function ProductList() {
       <section className="pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="page-container">
           <ScrollReveal>
-            <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
+            <p className="text-sm font-medium tracking-widest text-foreground uppercase mb-4">
               Product
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 leading-tight">
+            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 leading-tight">
               产品
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
@@ -32,13 +32,13 @@ export default function ProductList() {
             {productDocs.map((doc, index) => (
               <ScrollReveal key={doc.slug} delay={index * 100}>
                 <Link to={`/product/${doc.slug}`}>
-                  <Card className="group h-full flex flex-col hover:border-primary/20 transition-all duration-500 hover:-translate-y-1">
+                  <Card className="group h-full flex flex-col hover:border-border transition-all duration-500 hover:-translate-y-1">
                     <CardHeader>
                       <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                        <FileText size={14} className="text-primary" />
+                        <FileText size={14} className="text-foreground" />
                         <span>文档</span>
                       </div>
-                      <CardTitle className="text-lg leading-snug group-hover:text-primary transition-colors duration-300">
+                      <CardTitle className="text-lg leading-snug group-hover:text-foreground transition-colors duration-300">
                         {doc.title}
                       </CardTitle>
                       <CardDescription className="text-sm leading-relaxed pt-1 line-clamp-2">

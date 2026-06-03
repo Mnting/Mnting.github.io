@@ -33,10 +33,10 @@ export default function ProductDetail() {
         <ScrollReveal delay={50}>
           <div className="mb-12">
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-              <FileText size={14} className="text-primary" />
+              <FileText size={14} className="text-foreground" />
               <span>产品文档</span>
             </div>
-            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight">
+            <h1 className="font-sans text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight">
               {doc.title}
             </h1>
           </div>
@@ -44,12 +44,12 @@ export default function ProductDetail() {
 
         {/* Markdown content */}
         <article className="text-foreground leading-relaxed space-y-4
-          [&_h1]:font-serif [&_h1]:text-3xl [&_h1]:font-semibold [&_h1]:mt-8 [&_h1]:mb-4
-          [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:mt-10 [&_h2]:mb-4
-          [&_h3]:font-serif [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-8 [&_h3]:mb-3
+          [&_h1]:font-sans [&_h1]:text-3xl [&_h1]:font-semibold [&_h1]:mt-8 [&_h1]:mb-4
+          [&_h2]:font-sans [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:mt-10 [&_h2]:mb-4
+          [&_h3]:font-sans [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-8 [&_h3]:mb-3
           [&_p]:leading-relaxed [&_p]:my-3
-          [&_a]:text-primary [&_a]:no-underline hover:[&_a]:underline
-          [&_blockquote]:border-l-4 [&_blockquote]:border-primary/50 [&_blockquote]:bg-secondary/30 [&_blockquote]:py-2 [&_blockquote]:px-4 [&_blockquote]:rounded-r-lg [&_blockquote]:my-4
+          [&_a]:text-foreground [&_a]:no-underline hover:[&_a]:underline
+          [&_blockquote]:border-l-4 [&_blockquote]:border-border [&_blockquote]:bg-whisper-gray [&_blockquote]:py-2 [&_blockquote]:px-4 [&_blockquote]:rounded-r-lg [&_blockquote]:my-4
           [&_code]:bg-secondary [&_code]:text-foreground [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm
           [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:my-3
           [&_li]:my-1

@@ -21,12 +21,11 @@ function ScrollToTop() {
 function Layout() {
   const location = useLocation()
   const isHome = location.pathname === '/'
-  const isPhotography = location.pathname === '/photography'
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-canvas-white">
       <Navbar />
-      <main className={isHome || isPhotography ? '' : 'pt-16 md:pt-20'}>
+      <main className={isHome ? '' : 'pt-16 md:pt-20'}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
@@ -36,7 +35,7 @@ function Layout() {
           <Route path="/photography" element={<Photography />} />
         </Routes>
       </main>
-      {!isHome && !isPhotography && <Footer />}
+      {!isHome && <Footer />}
     </div>
   )
 }

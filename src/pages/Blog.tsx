@@ -72,10 +72,10 @@ export default function Blog() {
       <section className="pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="page-container">
           <ScrollReveal>
-            <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
+            <p className="text-sm font-medium tracking-widest text-foreground uppercase mb-4">
               Journal
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 leading-tight">
+            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 leading-tight">
               日记
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
@@ -93,7 +93,7 @@ export default function Blog() {
               {categories.map((cat) => (
                 <button
                   key={cat}
-                  className="px-4 py-2 text-sm font-medium rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/30 hover:bg-primary/5 transition-all duration-200"
+                  className="px-4 py-2 text-sm font-medium rounded-md border border-border text-muted-foreground hover:text-foreground hover:bg-whisper-gray transition-all duration-200"
                 >
                   {cat}
                 </button>
@@ -109,14 +109,14 @@ export default function Blog() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {posts.map((post, index) => (
               <ScrollReveal key={post.slug} delay={index * 100}>
-                <Card className="group h-full flex flex-col hover:border-primary/20 transition-all duration-500 hover:-translate-y-1">
+                <Card className="group h-full flex flex-col hover:border-border transition-all duration-500 hover:-translate-y-1">
                   <CardHeader>
                     <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                      <span className="px-2 py-0.5 rounded-full bg-primary/8 text-primary font-medium">
+                      <span className="px-2.5 py-0.5 rounded-md bg-whisper-gray text-foreground text-xs font-medium">
                         {post.category}
                       </span>
                     </div>
-                    <CardTitle className="text-lg leading-snug group-hover:text-primary transition-colors duration-300">
+                    <CardTitle className="text-lg leading-snug group-hover:text-foreground transition-colors duration-300">
                       {post.title}
                     </CardTitle>
                     <CardDescription className="text-sm leading-relaxed pt-1 line-clamp-3">
@@ -149,7 +149,7 @@ export default function Blog() {
           {/* Load More */}
           <ScrollReveal delay={600}>
             <div className="text-center mt-12">
-              <Button variant="outline" size="lg" className="rounded-full px-8">
+              <Button variant="default-light" size="lg">
                 加载更多
               </Button>
             </div>

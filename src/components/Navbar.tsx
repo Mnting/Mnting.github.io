@@ -15,8 +15,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
-  const isHome = location.pathname === '/'
-  const isPhotography = location.pathname === '/photography'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,13 +31,10 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        isHome && !scrolled
-          ? 'bg-transparent'
-          : isPhotography
-            ? 'bg-gradient-to-b from-black/60 to-transparent backdrop-blur-sm'
-            : 'bg-background/80 backdrop-blur-xl border-b border-border/40',
-        scrolled && !isPhotography && 'shadow-sm'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        scrolled
+          ? 'bg-white/95 backdrop-blur-xl shadow-nav border-b border-border'
+          : 'bg-transparent'
       )}
     >
       <div className="page-container">
@@ -47,14 +42,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             to="/"
-            className={cn(
-              'font-serif text-xl font-semibold tracking-tight transition-colors duration-300',
-              isHome && !scrolled
-                ? 'text-white/90'
-                : isPhotography
-                  ? 'text-white/90'
-                  : 'text-foreground'
-            )}
+            className="font-sans text-xl font-bold tracking-[-0.011em] text-foreground transition-colors duration-300"
           >
             MyInfo
           </Link>
@@ -66,19 +54,10 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  'relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300',
-                  isHome && !scrolled
-                    ? 'text-white/70 hover:text-white hover:bg-white/10'
-                    : isPhotography
-                      ? 'text-white/70 hover:text-white hover:bg-white/10'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-secondary',
-                  location.pathname === link.path && (
-                    isHome && !scrolled
-                      ? 'text-white bg-white/15'
-                      : isPhotography
-                        ? 'text-white bg-white/15'
-                        : 'text-primary bg-primary/8'
-                  )
+                  'px-[14px] py-[6px] text-sm font-medium rounded-md transition-colors duration-200',
+                  location.pathname === link.path
+                    ? 'text-foreground bg-whisper-gray'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-whisper-gray'
                 )}
               >
                 {link.label}
@@ -89,14 +68,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={cn(
-              'md:hidden p-2 rounded-lg transition-colors',
-              isHome && !scrolled
-                ? 'text-white/80 hover:text-white hover:bg-white/10'
-                : isPhotography
-                  ? 'text-white/80 hover:text-white hover:bg-white/10'
-                  : 'text-foreground hover:bg-secondary'
-            )}
+            className="md:hidden p-2 rounded-md text-foreground hover:bg-whisper-gray transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -112,10 +84,10 @@ export default function Navbar() {
                   key={link.path}
                   to={link.path}
                   className={cn(
-                    'px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200',
+                    'px-4 py-3 text-sm font-medium rounded-md transition-colors duration-200',
                     location.pathname === link.path
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
+                      ? 'bg-whisper-gray text-foreground'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-whisper-gray'
                   )}
                 >
                   {link.label}
