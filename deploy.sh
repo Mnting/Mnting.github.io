@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+# 配置代理（解决国内网络连接 GitHub 超时问题）
+export https_proxy=http://127.0.0.1:15236
+export http_proxy=http://127.0.0.1:15236
+
 echo "🚀 开始部署..."
 
 # 1. 提交代码
