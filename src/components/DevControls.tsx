@@ -35,11 +35,8 @@ const GROUPS: {
   {
     id: 'color', label: '颜色分段', icon: '🎨',
     fields: [
-      { key: 'purpleZoneStart', label: '紫色起始位置', min: 0.4, max: 0.85, step: 0.01 },
-      { key: 'blendWidth', label: '交接渗透宽度', min: 0, max: 0.3, step: 0.01 },
-      { key: 'warmBlobCount', label: '暖色色团数', min: 2, max: 8, step: 1 },
-      { key: 'coolBlobCount', label: '紫色色团数', min: 2, max: 8, step: 1 },
-      { key: 'blobSize', label: '色团大小', min: 40, max: 300, step: 5 },
+      { key: 'purpleZoneEnd', label: '紫色区域结束点', min: 0.4, max: 0.85, step: 0.01 },
+      { key: 'blendWidth', label: '水彩晕染宽度', min: 0, max: 0.2, step: 0.01 },
     ],
   },
   {
