@@ -370,25 +370,31 @@ export default function HeroIllustration({ params }: Props) {
         ctx.restore()
       }
 
-      // ===== ROCKET / AIRPLANE =====
-      ctx.save()
+      // ===== DRAWING ORDER: legs → rocket → upper body (fixes overlap) =====
       const floatOffset = Math.sin((elapsed / p.floatSpeed) * Math.PI * 2) * p.floatAmplitude
+
+      // Layer 1: Draw stick figure legs BEHIND the rocket
+      ctx.save()
       ctx.translate(sx, sy + floatOffset)
       ctx.rotate((p.planeRotation * Math.PI) / 180)
       ctx.scale(p.planeScale, p.planeScale)
-
-      drawRocket(ctx, elapsed)
-
+      drawStickFigureLower(ctx)
       ctx.restore()
 
-      // ===== STICK FIGURE ON ROCKET =====
+      // Layer 2: Draw the full rocket body (covers leg-body junction)
       ctx.save()
       ctx.translate(sx, sy + floatOffset)
       ctx.rotate((p.planeRotation * Math.PI) / 180)
       ctx.scale(p.planeScale, p.planeScale)
+      drawRocket(ctx, elapsed)
+      ctx.restore()
 
-      drawStickFigure(ctx)
-
+      // Layer 3: Draw stick figure upper body ON TOP of rocket
+      ctx.save()
+      ctx.translate(sx, sy + floatOffset)
+      ctx.rotate((p.planeRotation * Math.PI) / 180)
+      ctx.scale(p.planeScale, p.planeScale)
+      drawStickFigureUpper(ctx)
       ctx.restore()
 
       requestAnimationFrame(loop)
@@ -410,91 +416,17 @@ export default function HeroIllustration({ params }: Props) {
 /* ========== Rocket Drawing ========== */
 
 function drawRocket(ctx: CanvasRenderingContext2D, elapsed: number) {
-  // Body - rocket fuselage
   const bodyW = 85, bodyH = 22
 
-  // Main fuselage (rounded rectangle with pointed nose)
-  ctx.beginPath()
-  ctx.moveTo(-bodyW / 2, -bodyH / 2)
-  // Top edge
-  ctx.lineTo(bodyW / 2 - 15, -bodyH / 2)
-  // Nose cone (pointed)
-  ctx.lineTo(bodyW / 2 + 10, 0)
-  // Bottom of nose back to body
-  ctx.lineTo(bodyW / 2 - 15, bodyH / 2)
-  // Bottom edge
-  ctx.lineTo(-bodyW / 2, bodyH / 2)
-  // Tail end (slightly tapered)
-  ctx.lineTo(-bodyW / 2 - 5, 0)
-  ctx.closePath()
-  ctx.fillStyle = '#ffffff'
-  ctx.fill()
-  ctx.strokeStyle = '#111111'
-  ctx.lineWidth = 2.2
-  ctx.stroke()
-
-  // Body details - horizontal lines
-  ctx.beginPath()
-  ctx.moveTo(-bodyW / 2 + 10, -bodyH / 2 + 4)
-  ctx.lineTo(bodyW / 2 - 20, -bodyH / 2 + 4)
-  ctx.strokeStyle = '#111'
-  ctx.lineWidth = 1
-  ctx.stroke()
-
-  ctx.beginPath()
-  ctx.moveTo(-bodyW / 2 + 10, bodyH / 2 - 4)
-  ctx.lineTo(bodyW / 2 - 20, bodyH / 2 - 4)
-  ctx.stroke()
-
-  // Window / porthole
-  ctx.beginPath()
-  ctx.arc(bodyW / 2 - 25, 0, 5.5, 0, Math.PI * 2)
-  ctx.fillStyle = 'rgba(180, 220, 255, 0.5)'
-  ctx.fill()
-  ctx.strokeStyle = '#111'
-  ctx.lineWidth = 1.8
-  ctx.stroke()
-
-  // Second window
-  ctx.beginPath()
-  ctx.arc(bodyW / 2 - 40, 0, 4, 0, Math.PI * 2)
-  ctx.fillStyle = 'rgba(180, 220, 255, 0.4)'
-  ctx.fill()
-  ctx.strokeStyle = '#111'
-  ctx.lineWidth = 1.5
-  ctx.stroke()
-
-  // Wings (top and bottom)
-  for (const side of [-1, 1]) {
-    ctx.beginPath()
-    ctx.moveTo(-5, side * bodyH / 2)
-    ctx.lineTo(10, side * (bodyH / 2 + 30))
-    ctx.lineTo(22, side * (bodyH / 2 + 28))
-    ctx.lineTo(8, side * bodyH / 2)
-    ctx.closePath()
-    ctx.fillStyle = '#ffffff'
-    ctx.fill()
-    ctx.strokeStyle = '#111'
-    ctx.lineWidth = 2
-    ctx.stroke()
-
-    // Wing detail line
-    ctx.beginPath()
-    ctx.moveTo(0, side * (bodyH / 2 + 2))
-    ctx.lineTo(14, side * (bodyH / 2 + 22))
-    ctx.strokeStyle = '#111'
-    ctx.lineWidth = 1
-    ctx.stroke()
-  }
-
-  // Tail fin (vertical)
+  // --- Tail fins (drawn first so body overlaps them slightly) ---
+  // Tail fin top
   ctx.beginPath()
   ctx.moveTo(-bodyW / 2 + 5, -bodyH / 2)
   ctx.lineTo(-bodyW / 2 - 10, -bodyH / 2 - 22)
   ctx.lineTo(-bodyW / 2 + 8, -bodyH / 2 - 14)
   ctx.lineTo(-bodyW / 2 + 12, -bodyH / 2)
   ctx.closePath()
-  ctx.fillStyle = '#fff'
+  ctx.fillStyle = '#fbc768' // Engagement Gold accent
   ctx.fill()
   ctx.strokeStyle = '#111'
   ctx.lineWidth = 2
@@ -507,16 +439,96 @@ function drawRocket(ctx: CanvasRenderingContext2D, elapsed: number) {
   ctx.lineTo(-bodyW / 2 + 8, bodyH / 2 + 8)
   ctx.lineTo(-bodyW / 2 + 10, bodyH / 2)
   ctx.closePath()
-  ctx.fillStyle = '#fff'
+  ctx.fillStyle = '#fbc768' // Engagement Gold accent
   ctx.fill()
   ctx.strokeStyle = '#111'
   ctx.lineWidth = 2
   ctx.stroke()
 
-  // Propeller hub
+  // --- Wings (top and bottom) ---
+  for (const side of [-1, 1]) {
+    ctx.beginPath()
+    ctx.moveTo(-5, side * bodyH / 2)
+    ctx.lineTo(10, side * (bodyH / 2 + 30))
+    ctx.lineTo(22, side * (bodyH / 2 + 28))
+    ctx.lineTo(8, side * bodyH / 2)
+    ctx.closePath()
+    ctx.fillStyle = '#e2ddfd' // Subtle Lavender for wings
+    ctx.fill()
+    ctx.strokeStyle = '#111'
+    ctx.lineWidth = 2
+    ctx.stroke()
+
+    // Wing detail line
+    ctx.beginPath()
+    ctx.moveTo(0, side * (bodyH / 2 + 2))
+    ctx.lineTo(14, side * (bodyH / 2 + 22))
+    ctx.strokeStyle = 'rgba(46, 36, 96, 0.4)' // Midnight Violet subtle
+    ctx.lineWidth = 1
+    ctx.stroke()
+  }
+
+  // --- Main fuselage ---
+  ctx.beginPath()
+  ctx.moveTo(-bodyW / 2, -bodyH / 2)
+  ctx.lineTo(bodyW / 2 - 15, -bodyH / 2)
+  ctx.lineTo(bodyW / 2 + 10, 0)
+  ctx.lineTo(bodyW / 2 - 15, bodyH / 2)
+  ctx.lineTo(-bodyW / 2, bodyH / 2)
+  ctx.lineTo(-bodyW / 2 - 5, 0)
+  ctx.closePath()
+  // Gradient fill: white body with subtle lavender tint at tail
+  const bodyGrad = ctx.createLinearGradient(-bodyW / 2 - 5, 0, bodyW / 2 + 10, 0)
+  bodyGrad.addColorStop(0, '#f0ecfc') // Light lavender at tail
+  bodyGrad.addColorStop(0.3, '#ffffff') // White center
+  bodyGrad.addColorStop(1, '#ffffff') // White nose
+  ctx.fillStyle = bodyGrad
+  ctx.fill()
+  ctx.strokeStyle = '#111111'
+  ctx.lineWidth = 2.2
+  ctx.stroke()
+
+  // Body accent stripe (top)
+  ctx.beginPath()
+  ctx.moveTo(-bodyW / 2 + 10, -bodyH / 2 + 4)
+  ctx.lineTo(bodyW / 2 - 20, -bodyH / 2 + 4)
+  ctx.strokeStyle = 'rgba(225, 101, 64, 0.5)' // LeadGen Red subtle
+  ctx.lineWidth = 1.2
+  ctx.stroke()
+
+  // Body accent stripe (bottom)
+  ctx.beginPath()
+  ctx.moveTo(-bodyW / 2 + 10, bodyH / 2 - 4)
+  ctx.lineTo(bodyW / 2 - 20, bodyH / 2 - 4)
+  ctx.strokeStyle = 'rgba(50, 142, 250, 0.4)' // Intelligence Blue subtle
+  ctx.lineWidth = 1.2
+  ctx.stroke()
+
+  // Window / porthole
+  ctx.beginPath()
+  ctx.arc(bodyW / 2 - 25, 0, 5.5, 0, Math.PI * 2)
+  const windowGrad = ctx.createRadialGradient(bodyW / 2 - 25, -1, 1, bodyW / 2 - 25, 0, 5.5)
+  windowGrad.addColorStop(0, 'rgba(153, 255, 249, 0.6)') // Cyan Glow center
+  windowGrad.addColorStop(1, 'rgba(208, 178, 255, 0.5)') // Lavender edge
+  ctx.fillStyle = windowGrad
+  ctx.fill()
+  ctx.strokeStyle = '#111'
+  ctx.lineWidth = 1.8
+  ctx.stroke()
+
+  // Second window
+  ctx.beginPath()
+  ctx.arc(bodyW / 2 - 40, 0, 4, 0, Math.PI * 2)
+  ctx.fillStyle = 'rgba(153, 255, 249, 0.4)' // Cyan Glow
+  ctx.fill()
+  ctx.strokeStyle = '#111'
+  ctx.lineWidth = 1.5
+  ctx.stroke()
+
+  // --- Propeller hub ---
   ctx.beginPath()
   ctx.arc(bodyW / 2 + 10, 0, 5, 0, Math.PI * 2)
-  ctx.fillStyle = '#333'
+  ctx.fillStyle = '#10054d' // Deep Indigo
   ctx.fill()
   ctx.strokeStyle = '#111'
   ctx.lineWidth = 2
@@ -528,6 +540,7 @@ function drawRocket(ctx: CanvasRenderingContext2D, elapsed: number) {
   const propAngle = elapsed * 10
   ctx.rotate(propAngle)
 
+  const bladeColors = ['#2e2460', '#10054d', '#272625'] // Midnight Violet / Deep Indigo / Charcoal
   for (let i = 0; i < 3; i++) {
     ctx.save()
     ctx.rotate((i * Math.PI * 2) / 3)
@@ -537,7 +550,7 @@ function drawRocket(ctx: CanvasRenderingContext2D, elapsed: number) {
     ctx.lineTo(-1, -17)
     ctx.lineTo(-2, -2)
     ctx.closePath()
-    ctx.fillStyle = '#222'
+    ctx.fillStyle = bladeColors[i]
     ctx.fill()
     ctx.restore()
   }
@@ -545,95 +558,149 @@ function drawRocket(ctx: CanvasRenderingContext2D, elapsed: number) {
 
   // Small exhaust marks behind tail
   ctx.save()
-  ctx.globalAlpha = 0.3
+  ctx.globalAlpha = 0.35
   for (let i = 0; i < 3; i++) {
     const ex = -bodyW / 2 - 15 - i * 8
     const ey = Math.sin(elapsed * 3 + i) * 3
     ctx.beginPath()
     ctx.arc(ex, ey, 2 - i * 0.5, 0, Math.PI * 2)
-    ctx.fillStyle = '#666'
+    ctx.fillStyle = i === 0 ? '#e16540' : '#6d6c6b' // First puff in LeadGen Red
     ctx.fill()
   }
   ctx.restore()
 }
 
-/* ========== Stick Figure Drawing ========== */
+/* ========== Stick Figure Drawing (Split for layering) ========== */
 
-function drawStickFigure(ctx: CanvasRenderingContext2D) {
-  const cx = 5, cy = -11 - 8  // Position above the rocket body
+// Lower body: legs that go BEHIND the rocket
+function drawStickFigureLower(ctx: CanvasRenderingContext2D) {
+  const cx = 5, cy = -11 - 8
 
-  // Head
+  // Legs - straddling the rocket (drawn behind so rocket body covers junction)
+  ctx.beginPath()
+  ctx.moveTo(cx, cy + 10)
+  ctx.lineTo(cx - 7, cy + 22)
+  ctx.strokeStyle = '#10054d' // Deep Indigo pants
+  ctx.lineWidth = 3.5
+  ctx.lineCap = 'round'
+  ctx.stroke()
+
+  ctx.beginPath()
+  ctx.moveTo(cx, cy + 10)
+  ctx.lineTo(cx + 7, cy + 22)
+  ctx.strokeStyle = '#10054d' // Deep Indigo pants
+  ctx.lineWidth = 3.5
+  ctx.lineCap = 'round'
+  ctx.stroke()
+
+  // Shoes (small filled circles at feet)
+  ctx.beginPath()
+  ctx.arc(cx - 7, cy + 22, 2.5, 0, Math.PI * 2)
+  ctx.fillStyle = '#272625' // Surface Charcoal
+  ctx.fill()
+  ctx.beginPath()
+  ctx.arc(cx + 7, cy + 22, 2.5, 0, Math.PI * 2)
+  ctx.fillStyle = '#272625'
+  ctx.fill()
+}
+
+// Upper body: head, torso, arms ON TOP of rocket
+function drawStickFigureUpper(ctx: CanvasRenderingContext2D) {
+  const cx = 5, cy = -11 - 8
+
+  // Torso (shirt) — filled rounded shape
+  ctx.beginPath()
+  ctx.moveTo(cx - 5, cy - 1)
+  ctx.lineTo(cx + 5, cy - 1)
+  ctx.lineTo(cx + 4, cy + 10)
+  ctx.lineTo(cx - 4, cy + 10)
+  ctx.closePath()
+  ctx.fillStyle = '#328efa' // Intelligence Blue shirt
+  ctx.fill()
+  ctx.strokeStyle = '#111'
+  ctx.lineWidth = 1.5
+  ctx.stroke()
+
+  // Arms - raised up in excitement (skin tone)
+  ctx.beginPath()
+  ctx.moveTo(cx - 4, cy + 1)
+  ctx.lineTo(cx - 12, cy - 8)
+  ctx.strokeStyle = '#FFD5B5' // Skin tone
+  ctx.lineWidth = 3
+  ctx.lineCap = 'round'
+  ctx.stroke()
+  // Arm outline
+  ctx.beginPath()
+  ctx.moveTo(cx - 4, cy + 1)
+  ctx.lineTo(cx - 12, cy - 8)
+  ctx.strokeStyle = '#111'
+  ctx.lineWidth = 1.5
+  ctx.lineCap = 'round'
+  ctx.stroke()
+
+  ctx.beginPath()
+  ctx.moveTo(cx + 4, cy + 1)
+  ctx.lineTo(cx + 12, cy - 8)
+  ctx.strokeStyle = '#FFD5B5' // Skin tone
+  ctx.lineWidth = 3
+  ctx.lineCap = 'round'
+  ctx.stroke()
+  // Arm outline
+  ctx.beginPath()
+  ctx.moveTo(cx + 4, cy + 1)
+  ctx.lineTo(cx + 12, cy - 8)
+  ctx.strokeStyle = '#111'
+  ctx.lineWidth = 1.5
+  ctx.lineCap = 'round'
+  ctx.stroke()
+
+  // Hands (skin tone filled circles)
+  ctx.beginPath()
+  ctx.arc(cx - 12, cy - 8, 2.5, 0, Math.PI * 2)
+  ctx.fillStyle = '#FFD5B5'
+  ctx.fill()
+  ctx.strokeStyle = '#111'
+  ctx.lineWidth = 1
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.arc(cx + 12, cy - 8, 2.5, 0, Math.PI * 2)
+  ctx.fillStyle = '#FFD5B5'
+  ctx.fill()
+  ctx.strokeStyle = '#111'
+  ctx.lineWidth = 1
+  ctx.stroke()
+
+  // Head (skin tone fill)
   ctx.beginPath()
   ctx.arc(cx, cy - 10, 8, 0, Math.PI * 2)
-  ctx.fillStyle = '#ffffff'
+  ctx.fillStyle = '#FFE0C8' // Warm skin tone
   ctx.fill()
   ctx.strokeStyle = '#111'
   ctx.lineWidth = 2
   ctx.stroke()
 
+  // Hair (a small cap on top)
+  ctx.beginPath()
+  ctx.arc(cx, cy - 12, 7, Math.PI + 0.3, -0.3)
+  ctx.fillStyle = '#272625' // Surface Charcoal hair
+  ctx.fill()
+
   // Eyes (dots)
   ctx.beginPath()
-  ctx.arc(cx - 3, cy - 12, 1.5, 0, Math.PI * 2)
+  ctx.arc(cx - 3, cy - 11, 1.5, 0, Math.PI * 2)
   ctx.fillStyle = '#111'
   ctx.fill()
   ctx.beginPath()
-  ctx.arc(cx + 3, cy - 12, 1.5, 0, Math.PI * 2)
+  ctx.arc(cx + 3, cy - 11, 1.5, 0, Math.PI * 2)
   ctx.fillStyle = '#111'
   ctx.fill()
 
   // Smile
   ctx.beginPath()
-  ctx.arc(cx, cy - 8, 4, 0.2, Math.PI - 0.2)
+  ctx.arc(cx, cy - 7, 3.5, 0.2, Math.PI - 0.2)
   ctx.strokeStyle = '#111'
   ctx.lineWidth = 1.5
-  ctx.stroke()
-
-  // Body (torso)
-  ctx.beginPath()
-  ctx.moveTo(cx, cy - 2)
-  ctx.lineTo(cx, cy + 12)
-  ctx.strokeStyle = '#111'
-  ctx.lineWidth = 2
-  ctx.stroke()
-
-  // Arms - raised up in excitement
-  ctx.beginPath()
-  ctx.moveTo(cx, cy + 2)
-  ctx.lineTo(cx - 10, cy - 8)
-  ctx.strokeStyle = '#111'
-  ctx.lineWidth = 2
-  ctx.stroke()
-
-  ctx.beginPath()
-  ctx.moveTo(cx, cy + 2)
-  ctx.lineTo(cx + 10, cy - 8)
-  ctx.strokeStyle = '#111'
-  ctx.lineWidth = 2
-  ctx.stroke()
-
-  // Hands (small circles)
-  ctx.beginPath()
-  ctx.arc(cx - 10, cy - 8, 2, 0, Math.PI * 2)
-  ctx.fillStyle = '#111'
-  ctx.fill()
-  ctx.beginPath()
-  ctx.arc(cx + 10, cy - 8, 2, 0, Math.PI * 2)
-  ctx.fillStyle = '#111'
-  ctx.fill()
-
-  // Legs - straddling the rocket
-  ctx.beginPath()
-  ctx.moveTo(cx, cy + 12)
-  ctx.lineTo(cx - 7, cy + 22)
-  ctx.strokeStyle = '#111'
-  ctx.lineWidth = 2
-  ctx.stroke()
-
-  ctx.beginPath()
-  ctx.moveTo(cx, cy + 12)
-  ctx.lineTo(cx + 7, cy + 22)
-  ctx.strokeStyle = '#111'
-  ctx.lineWidth = 2
+  ctx.lineCap = 'round'
   ctx.stroke()
 }
 
