@@ -1,0 +1,23 @@
+{
+  "trailControl1X": 0.28,
+  "trailControl1Y": 0.63,
+  "trailControl2X": 0.29,
+  "trailControl2Y": 0.62,
+  "trailEndX": 0,
+  "trailEndY": 0.62,
+  "trailStartWidth": 1,
+  "trailEndWidth": 370,
+  "purpleZoneEnd": 0.62,
+  "blendWidth": 0.2,
+  "edgeWobbleAmp": 59,
+  "trailLayers": 5,
+  "trailOpacity": 0.55,
+  "trailGlow": 12,
+  "blurAmount": 8,
+  "planeX": 0.82,
+  "planeY": 0.28,
+  "planeScale": 1.6,
+  "planeRotation": -18,
+  "floatAmplitude": 5,
+  "floatSpeed": 5
+}

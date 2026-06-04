@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react'
-import { Settings, X, Save, RotateCcw, ChevronRight } from 'lucide-react'
+import { useState, useCallback, useRef } from 'react'
+import { Settings, X, Save, RotateCcw, ChevronRight, Check, Copy } from 'lucide-react'
 import type { HeroParams } from './HeroIllustration'
 
 interface Props {
@@ -71,11 +71,22 @@ export function DevControls({ params, onChange, onReset }: Props) {
     try { localStorage.setItem('hero-illustration-params', JSON.stringify(np)) } catch {}
   }, [params, onChange])
 
-  const export_ = useCallback(() => {
-    const json = JSON.stringify(params, null, 2)
-    console.log('🎨\n', json)
-    navigator.clipboard.writeText(json).then(() => console.log('✅ 已复制'), () => console.log('⚠️ 手动复制'))
-  }, [params])
+  const [showExport, setShowExport] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
+
+  const jsonString = JSON.stringify(params, null, 2)
+
+  const copyToClipboard = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(jsonString)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // 降级方案：选中 textarea 内容让用户手动复制
+      textareaRef.current?.select()
+    }
+  }, [jsonString])
 
   return <>
     <button onClick={() => setOpen(!open)} className="fixed bottom-6 right-6 z-[200] w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm border border-border shadow-elevated flex items-center justify-center hover:bg-white transition-all" title={open ? '关闭' : '打开'}>
@@ -107,9 +118,44 @@ export function DevControls({ params, onChange, onReset }: Props) {
           </div>
         })}
       </div>
-      <div className="flex items-center gap-2 px-4 py-3 border-t border-border shrink-0">
-        <button onClick={export_} className="flex-1 flex items-center justify-center gap-1.5 py-2 text-xs font-medium rounded-md bg-foreground text-white hover:opacity-90"><Save size={12}/>导出</button>
-        <button onClick={onReset} className="flex-1 flex items-center justify-center gap-1.5 py-2 text-xs font-medium rounded-md bg-whisper-gray text-foreground hover:bg-taupe-light"><RotateCcw size={12}/>重置</button>
+      {/* Bottom actions */}
+      <div className="border-t border-border shrink-0">
+        <div className="flex items-center gap-2 px-4 pt-3">
+          <button onClick={() => setShowExport(!showExport)} className="flex-1 flex items-center justify-center gap-1.5 py-2 text-xs font-medium rounded-md bg-phoenix-orange text-white hover:opacity-90">
+            <Save size={12} />{showExport ? '收起 JSON' : '导出 JSON'}
+          </button>
+          <button onClick={onReset} className="flex-1 flex items-center justify-center gap-1.5 py-2 text-xs font-medium rounded-md bg-whisper-gray text-foreground hover:bg-taupe-light">
+            <RotateCcw size={12} />重置
+          </button>
+        </div>
+
+        {/* Export panel */}
+        {showExport && (
+          <div className="px-4 pt-3 pb-2 space-y-2">
+            <p className="text-[10px] text-muted-foreground leading-relaxed">
+              复制下方内容替换 <code className="px-1 py-0.5 bg-whisper-gray rounded text-[10px]">src/data/hero-params.json</code>，提交后部署即永久生效。
+            </p>
+            <textarea
+              ref={textareaRef}
+              readOnly
+              value={jsonString}
+              rows={14}
+              className="w-full p-2 text-[11px] font-mono bg-whisper-gray border border-border rounded-md resize-none text-foreground focus:outline-none focus:ring-1 focus:ring-phoenix-orange"
+              onClick={() => textareaRef.current?.select()}
+            />
+            <button
+              onClick={copyToClipboard}
+              className={`w-full flex items-center justify-center gap-1.5 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                copied
+                  ? 'bg-green-500 text-white'
+                  : 'bg-foreground text-white hover:opacity-90'
+              }`}
+            >
+              {copied ? <Check size={12} /> : <Copy size={12} />}
+              {copied ? '已复制！' : '复制到剪贴板'}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   </>

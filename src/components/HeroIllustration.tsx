@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { DevControls } from './DevControls'
+import heroParams from '../data/hero-params.json'
 
 export interface HeroParams {
   trailControl1X: number
@@ -25,6 +26,7 @@ export interface HeroParams {
   floatSpeed: number
 }
 
+/** 兜底默认值（当 JSON 文件不可用时使用） */
 export const DEFAULT_PARAMS: HeroParams = {
   trailControl1X: 0.62, trailControl1Y: 0.32,
   trailControl2X: 0.30, trailControl2Y: 0.48,
@@ -708,11 +710,15 @@ function drawStickFigureUpper(ctx: CanvasRenderingContext2D) {
 
 export function HeroIllustrationWithControls() {
   const [params, setParams] = useState<HeroParams>(() => {
-    try {
-      const s = localStorage.getItem('hero-illustration-params')
-      if (s) return { ...DEFAULT_PARAMS, ...JSON.parse(s) }
-    } catch { /* ignore */ }
-    return { ...DEFAULT_PARAMS }
+    // DEV 模式：优先读取 localStorage（方便实时调试）
+    if (import.meta.env.DEV) {
+      try {
+        const s = localStorage.getItem('hero-illustration-params')
+        if (s) return { ...heroParams, ...JSON.parse(s) }
+      } catch { /* ignore */ }
+    }
+    // 生产环境或 DEV 无 localStorage：使用 hero-params.json
+    return { ...heroParams }
   })
 
   return (
@@ -723,7 +729,7 @@ export function HeroIllustrationWithControls() {
           params={params}
           onChange={setParams}
           onReset={() => {
-            setParams({ ...DEFAULT_PARAMS })
+            setParams({ ...heroParams })
             localStorage.removeItem('hero-illustration-params')
           }}
         />
