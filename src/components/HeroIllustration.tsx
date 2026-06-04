@@ -709,17 +709,7 @@ function drawStickFigureUpper(ctx: CanvasRenderingContext2D) {
 /* ========== Wrapper with DevControls ========== */
 
 export function HeroIllustrationWithControls() {
-  const [params, setParams] = useState<HeroParams>(() => {
-    // DEV 模式：优先读取 localStorage（方便实时调试）
-    if (import.meta.env.DEV) {
-      try {
-        const s = localStorage.getItem('hero-illustration-params')
-        if (s) return { ...heroParams, ...JSON.parse(s) }
-      } catch { /* ignore */ }
-    }
-    // 生产环境或 DEV 无 localStorage：使用 hero-params.json
-    return { ...heroParams }
-  })
+  const [params, setParams] = useState<HeroParams>(() => ({ ...heroParams }))
 
   return (
     <>
@@ -728,10 +718,7 @@ export function HeroIllustrationWithControls() {
         <DevControls
           params={params}
           onChange={setParams}
-          onReset={() => {
-            setParams({ ...heroParams })
-            localStorage.removeItem('hero-illustration-params')
-          }}
+          onReset={() => setParams({ ...heroParams })}
         />
       )}
     </>
