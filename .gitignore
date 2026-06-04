@@ -8,3 +8,4 @@ screenshot*.png
 vibe_images/
 
 .kagent/
+tsconfig.app.tsbuildinfo

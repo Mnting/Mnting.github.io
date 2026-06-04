@@ -16,48 +16,59 @@ export default function Photography() {
   const dragStartX = useRef(0)
   const dragStartTime = useRef(0)
 
+  // 使用 ref 作为转场锁，避免 useCallback 闭包过期导致快速点击时状态不同步
+  const isTransitioningRef = useRef(false)
+  const currentIndexRef = useRef(currentIndex)
+  currentIndexRef.current = currentIndex
+  const isDraggingRef = useRef(false)
+
   const { setCursorState } = useCursor()
 
   const goTo = useCallback((index: number) => {
-    if (isTransitioning) return
+    if (isTransitioningRef.current) return
     const targetIndex = ((index % photos.length) + photos.length) % photos.length
-    if (targetIndex === currentIndex) return
+    if (targetIndex === currentIndexRef.current) return
 
+    isTransitioningRef.current = true
     setIsTransitioning(true)
     setInfoVisible(false)
 
     setTimeout(() => {
       setCurrentIndex(targetIndex)
+      currentIndexRef.current = targetIndex
       setDragOffset(0)
       setTimeout(() => {
+        isTransitioningRef.current = false
         setIsTransitioning(false)
         setInfoVisible(true)
       }, 300)
     }, 300)
-  }, [currentIndex, isTransitioning])
+  }, [photos.length])
 
-  const goNext = useCallback(() => goTo(currentIndex + 1), [currentIndex, goTo])
-  const goPrev = useCallback(() => goTo(currentIndex - 1), [currentIndex, goTo])
+  const goNext = useCallback(() => goTo(currentIndexRef.current + 1), [goTo])
+  const goPrev = useCallback(() => goTo(currentIndexRef.current - 1), [goTo])
 
   // Mouse drag handlers
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     if (lightboxOpen) return
     dragStartX.current = e.clientX
     dragStartTime.current = Date.now()
+    isDraggingRef.current = true
     setIsDragging(true)
     setCursorState('drag-left')
   }, [lightboxOpen, setCursorState])
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!isDragging) return
+    if (!isDraggingRef.current) return
     const dx = e.clientX - dragStartX.current
     setDragOffset(dx)
     if (dx < -20) setCursorState('drag-right')
     else if (dx > 20) setCursorState('drag-left')
-  }, [isDragging, setCursorState])
+  }, [setCursorState])
 
   const handleMouseUp = useCallback((e: React.MouseEvent) => {
-    if (!isDragging) return
+    if (!isDraggingRef.current) return
+    isDraggingRef.current = false
     setIsDragging(false)
     setCursorState('default')
 
@@ -65,22 +76,22 @@ export default function Photography() {
     const dt = Date.now() - dragStartTime.current
     const velocity = Math.abs(dx) / dt
 
-    // Switch if dragged far enough or with enough velocity
     if (Math.abs(dx) > 80 || velocity > 0.3) {
       if (dx > 0) goPrev()
       else goNext()
     } else {
       setDragOffset(0)
     }
-  }, [isDragging, goNext, goPrev, setCursorState])
+  }, [goNext, goPrev, setCursorState])
 
   const handleMouseLeave = useCallback(() => {
-    if (isDragging) {
+    if (isDraggingRef.current) {
+      isDraggingRef.current = false
       setIsDragging(false)
       setDragOffset(0)
       setCursorState('default')
     }
-  }, [isDragging, setCursorState])
+  }, [setCursorState])
 
   // Keyboard navigation
   useEffect(() => {
@@ -98,23 +109,25 @@ export default function Photography() {
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     if (lightboxOpen) return
     touchStartX.current = e.touches[0].clientX
+    isDraggingRef.current = true
     setIsDragging(true)
   }, [lightboxOpen])
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    if (!isDragging) return
+    if (!isDraggingRef.current) return
     setDragOffset(e.touches[0].clientX - touchStartX.current)
-  }, [isDragging])
+  }, [])
 
   const handleTouchEnd = useCallback(() => {
-    if (!isDragging) return
+    if (!isDraggingRef.current) return
+    isDraggingRef.current = false
     setIsDragging(false)
     if (Math.abs(dragOffset) > 60) {
       if (dragOffset > 0) goPrev()
       else goNext()
     }
     setDragOffset(0)
-  }, [isDragging, dragOffset, goNext, goPrev])
+  }, [dragOffset, goNext, goPrev])
 
   const photo = photos[currentIndex]
 
@@ -220,17 +233,19 @@ export default function Photography() {
           <>
             <button
               onClick={goPrev}
+              onMouseDown={(e) => e.stopPropagation()}
               onMouseEnter={() => setCursorState('hover')}
               onMouseLeave={() => setCursorState('default')}
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-whisper-gray hover:bg-taupe-light text-muted-foreground hover:text-foreground border border-border transition-all duration-300"
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-whisper-gray hover:bg-taupe-light text-muted-foreground hover:text-foreground border border-border transition-all duration-300 z-10"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={goNext}
+              onMouseDown={(e) => e.stopPropagation()}
               onMouseEnter={() => setCursorState('hover')}
               onMouseLeave={() => setCursorState('default')}
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-whisper-gray hover:bg-taupe-light text-muted-foreground hover:text-foreground border border-border transition-all duration-300"
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-whisper-gray hover:bg-taupe-light text-muted-foreground hover:text-foreground border border-border transition-all duration-300 z-10"
             >
               <ChevronRight size={24} />
             </button>

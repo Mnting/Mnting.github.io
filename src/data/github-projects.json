@@ -1,0 +1,21 @@
+{
+  "_generated": "2026-06-04T03:32:21.149Z",
+  "_source": "github-api",
+  "projects": [
+    {
+      "slug": "mooc",
+      "title": "MOOC",
+      "description": "慕课网课程的随堂练习",
+      "date": "2022-06-21",
+      "tags": [
+        "Java"
+      ],
+      "github": "https://github.com/Mnting/MOOC",
+      "language": "Java",
+      "stars": 0,
+      "updatedAt": "2020-12-14T08:29:21Z",
+      "color": "from-red-500/10 to-orange-500/10",
+      "rawContent": "慕课网课程随堂练习——自觉更新"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ interface FrontmatterResult {
   content: string
 }
 
-function parseFrontmatter(raw: string): FrontmatterResult {
+export function parseFrontmatter(raw: string): FrontmatterResult {
   if (!raw.startsWith('---\n') && !raw.startsWith('---\r\n')) {
     return { data: {}, content: raw }
   }
@@ -70,18 +70,18 @@ const matter = (input: string): FrontmatterResult => parseFrontmatter(input)
 // ============================================================
 
 /** Extract slug from filepath: /path/to/foo.md -> foo, /path/to/bar.png -> bar */
-function parseSlug(filepath: string): string {
+export function parseSlug(filepath: string): string {
   return filepath.replace(/^.*\//, '').replace(/\.(md|png|jpe?g|webp|gif|avif)$/, '')
 }
 
 /** Extract title from H1 heading */
-function extractTitle(markdown: string): string {
+export function extractTitle(markdown: string): string {
   const match = markdown.match(/^#\s+(.+)$/m)
   return match ? match[1].trim() : 'Untitled'
 }
 
 /** Extract description from first blockquote or non-empty paragraph */
-function extractDescription(markdown: string): string {
+export function extractDescription(markdown: string): string {
   const lines = markdown.split('\n')
   for (const line of lines) {
     const trimmed = line.trim()
@@ -107,56 +107,11 @@ function computeReadTime(text: string): string {
 }
 
 // ============================================================
-// Portfolio
+// Portfolio (re-exported from portfolio.ts)
 // ============================================================
 
-const portfolioModules = import.meta.glob('../../content/portfolio/*.md', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-}) as Record<string, string>
-
-export interface PortfolioProject {
-  slug: string
-  title: string
-  description: string
-  date?: string
-  tags: string[]
-  link?: string
-  github?: string
-  color: string
-  rawContent: string
-}
-
-export const portfolioProjects: PortfolioProject[] = Object.entries(portfolioModules)
-  .map(([filepath, content]) => {
-    const slug = parseSlug(filepath)
-    const { data, content: body } = matter(content)
-
-    return {
-      slug,
-      title: data.title || extractTitle(content),
-      description: data.description || extractDescription(content),
-      date: data.date || undefined,
-      tags: data.tags || [],
-      link: data.link || undefined,
-      github: data.github || undefined,
-      color: data.color || 'from-gray-500/10 to-gray-400/10',
-      rawContent: body || content,
-    }
-  })
-  .sort((a, b) => {
-    // Sort by date descending, fallback to slug
-    if (a.date && b.date) return b.date.localeCompare(a.date)
-    if (a.date) return -1
-    if (b.date) return 1
-    return a.slug.localeCompare(b.slug)
-  })
-
-export const portfolioBySlug: Record<string, PortfolioProject> = {}
-for (const project of portfolioProjects) {
-  portfolioBySlug[project.slug] = project
-}
+export { portfolioProjects, portfolioBySlug } from './portfolio'
+export type { PortfolioProject } from './portfolio'
 
 // ============================================================
 // Blog
