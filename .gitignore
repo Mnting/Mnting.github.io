@@ -10,8 +10,9 @@ vibe_images/
 .kagent/
 tsconfig.app.tsbuildinfo
 
-# Photography images — hosted remotely at Mnting/images
-# Keep locally only for dev preview; never commit to this repo
+# Photography images — copied to dist/assets/ during deploy,
+# served via GitHub Pages at https://mnting.github.io/assets/
+# Keep locally for dev preview; never commit to this repo
 content/photography/*.png
 content/photography/*.jpg
 content/photography/*.jpeg

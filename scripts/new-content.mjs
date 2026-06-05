@@ -42,6 +42,7 @@ category: 未分类
 title: ${title}
 date: ${date}
 location:
+image: https://mnting.github.io/assets/${slug}.png
 order: 999
 ---
 

@@ -12,17 +12,17 @@ echo ""
 echo "📡 获取 GitHub 仓库信息..."
 node scripts/fetch-github-repos.js
 
-# 2. 上传摄影图片到图床仓库
-echo ""
-echo "🖼️  同步图片到图床..."
-bash scripts/upload-images.sh
-
-# 3. 构建项目
+# 2. 构建项目
 echo ""
 echo "🔨 构建项目..."
 npm run build
 
-# 4. 删除本地图片（已上传到图床，构建产物在 dist 中）
+# 3. 复制摄影图片到 dist/assets/（随 gh-pages 一起部署）
+echo ""
+echo "🖼️  复制图片到 dist/assets/..."
+bash scripts/upload-images.sh
+
+# 4. 删除本地图片（已复制到 dist/assets/，随部署上线）
 echo ""
 echo "🗑️  清理本地图片..."
 rm -f content/photography/*.png content/photography/*.jpg content/photography/*.jpeg content/photography/*.webp content/photography/*.gif content/photography/*.avif 2>/dev/null || true

@@ -41,6 +41,7 @@
       "title: ${1:标题}",
       "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
       "location: ${2:地点}",
+      "image: ${3:https://mnting.github.io/assets/图片文件名.png}",
       "order: 999",
       "---",
       "",

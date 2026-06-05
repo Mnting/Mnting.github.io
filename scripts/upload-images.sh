@@ -2,24 +2,31 @@
 set -euo pipefail
 
 # ============================================================
-# Upload photography images to a separate image-hosting repo.
-# Does NOT delete local images — cleanup happens in deploy.sh
-# after the build step.
+# Copy photography images to dist/assets/ for deployment.
+# Images are served via GitHub Pages at:
+#   https://mnting.github.io/assets/{slug}.png
 #
-# Image hosting repo: https://github.com/Mnting/images
-# Remote URL pattern:
-#   https://raw.githubusercontent.com/Mnting/images/main/photography/{slug}.png
+# This script runs AFTER `npm run build` because build wipes
+# the dist/ directory.  Local images in content/photography/
+# are deleted later by deploy.sh — do NOT delete them here.
 # ============================================================
 
-IMAGE_REPO_URL="https://github.com/Mnting/images.git"
 LOCAL_IMG_DIR="content/photography"
-REMOTE_SUBDIR="photography"
+DIST_ASSETS_DIR="dist/assets"
 
-# Supported image extensions (must match markdown.ts glob + .gitignore)
+# Supported image extensions
 EXTS=("png" "jpg" "jpeg" "webp" "gif" "avif")
 
 # ============================================================
-# 1. Discover local image files
+# 1. Ensure dist/assets/ exists
+# ============================================================
+if [ ! -d "$DIST_ASSETS_DIR" ]; then
+  echo "[copy-images] ERROR: $DIST_ASSETS_DIR not found — run 'npm run build' first"
+  exit 1
+fi
+
+# ============================================================
+# 2. Discover local image files
 # ============================================================
 IMAGE_FILES=()
 for ext in "${EXTS[@]}"; do
@@ -29,59 +36,15 @@ for ext in "${EXTS[@]}"; do
 done
 
 if [ ${#IMAGE_FILES[@]} -eq 0 ]; then
-  echo "[upload-images] no local images found, skipping"
+  echo "[copy-images] no local images found, skipping"
   exit 0
 fi
 
-echo "[upload-images] found ${#IMAGE_FILES[@]} image(s) to upload"
+echo "[copy-images] found ${#IMAGE_FILES[@]} image(s), copying to $DIST_ASSETS_DIR ..."
 
 # ============================================================
-# 2. Clone image hosting repo into a temporary directory
+# 3. Copy images into dist/assets/
 # ============================================================
-WORK_DIR=$(mktemp -d)
-cleanup() {
-  echo "[upload-images] cleaning up temp dir"
-  rm -rf "$WORK_DIR"
-}
-trap cleanup EXIT
+cp "${IMAGE_FILES[@]}" "$DIST_ASSETS_DIR/"
 
-echo "[upload-images] cloning $IMAGE_REPO_URL ..."
-if ! git clone --depth 1 "$IMAGE_REPO_URL" "$WORK_DIR" 2>/dev/null; then
-  echo "[upload-images] ERROR: failed to clone $IMAGE_REPO_URL"
-  echo "  Make sure the repo exists and is public: https://github.com/Mnting/images"
-  exit 1
-fi
-
-mkdir -p "$WORK_DIR/$REMOTE_SUBDIR"
-
-# ============================================================
-# 3. Copy images into the cloned repo
-# ============================================================
-echo "[upload-images] copying images ..."
-cp "${IMAGE_FILES[@]}" "$WORK_DIR/$REMOTE_SUBDIR/"
-
-cd "$WORK_DIR"
-
-# ============================================================
-# 4. Commit & push (only if there are changes)
-# ============================================================
-git add -A
-
-if git diff --cached --quiet && git diff --quiet; then
-  echo "[upload-images] image repo is already up to date"
-  cd - > /dev/null
-  exit 0
-fi
-
-echo "[upload-images] committing ..."
-git commit -m "upload: photography images $(date +%Y-%m-%d)"
-
-echo "[upload-images] pushing ..."
-if ! git push origin main; then
-  echo "[upload-images] ERROR: push failed — fix the issue and re-run"
-  cd - > /dev/null
-  exit 1
-fi
-
-echo "[upload-images] push successful — ${#IMAGE_FILES[@]} image(s) uploaded"
-cd - > /dev/null
+echo "[copy-images] done — ${#IMAGE_FILES[@]} image(s) copied to $DIST_ASSETS_DIR"
