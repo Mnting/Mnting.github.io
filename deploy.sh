@@ -47,5 +47,10 @@ echo ""
 echo "📦 发布到 GitHub Pages..."
 npx gh-pages -d dist --dotfiles
 
+# 8. 清理 dist/assets/ 中的临时图片（已部署到 gh-pages，释放本地空间）
+echo ""
+echo "🧹 清理 dist/assets/ 临时图片..."
+rm -f dist/assets/*.png dist/assets/*.jpg dist/assets/*.jpeg dist/assets/*.webp dist/assets/*.gif dist/assets/*.avif 2>/dev/null || true
+
 echo ""
 echo "✅ 完成！访问 https://mnting.github.io 查看"
