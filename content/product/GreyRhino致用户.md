@@ -1,4 +1,10 @@
-致用户：
+---
+title: GreyRhino 致用户
+date: 2026-06-05
+description: 直面灰犀牛，愿你早日上岸，过上理想的生活。
+---
+
+# GreyRhino 致用户
 
 你好，我是陶朴万。
 
