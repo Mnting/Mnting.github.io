@@ -42,10 +42,10 @@ echo ""
 echo "📤 推送 main 分支..."
 git push origin main
 
-# 7. 部署到 GitHub Pages（直接调用 gh-pages，避免 npm predeploy 重复构建）
+# 7. 部署到 GitHub Pages（--add：只增不删，保护远端已有的图片不被覆盖）
 echo ""
 echo "📦 发布到 GitHub Pages..."
-npx gh-pages -d dist --dotfiles
+npx gh-pages -d dist --dotfiles --add
 
 # 8. 清理 dist/assets/ 中的临时图片（已部署到 gh-pages，释放本地空间）
 echo ""
