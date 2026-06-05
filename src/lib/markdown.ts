@@ -214,29 +214,14 @@ const photographyModules = import.meta.glob('../../content/photography/*.md', {
   eager: true,
 }) as Record<string, string>
 
-// Auto-discover image files in the same directory, match by filename
-const photographyImages = import.meta.glob('../../content/photography/*.{png,jpg,jpeg,webp,gif,avif}', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>
-
-// Build slug -> image URL map from discovered images
-const imageBySlug: Record<string, string> = {}
-for (const [filepath, url] of Object.entries(photographyImages)) {
-  const slug = parseSlug(filepath)
-  imageBySlug[slug] = url
-}
-
-/** Base URL for the image hosting repo (public GitHub raw) */
+/** Base URL for photography images deployed via GitHub Pages */
 const IMAGE_HOST = 'https://mnting.github.io/assets'
 
-/** Resolve photo src with three-tier fallback:
+/** Resolve photo src with two-tier fallback:
  *  1. Explicit `image` field in frontmatter (production URL)
- *  2. Local image discovered by Vite (dev preview fallback)
- *  3. Constructed remote URL (assumes .png; use frontmatter for other formats) */
+ *  2. Constructed remote URL (assumes .png; use frontmatter for other formats) */
 function resolvePhotoSrc(slug: string, frontmatterImage?: string): string {
   if (frontmatterImage) return frontmatterImage
-  if (imageBySlug[slug]) return imageBySlug[slug]
   return `${IMAGE_HOST}/${slug}.png`
 }
 
