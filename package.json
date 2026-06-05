@@ -11,7 +11,10 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist --dotfiles",
     "fetch-github": "node scripts/fetch-github-repos.js",
-    "ship": "bash deploy.sh"
+    "ship": "bash deploy.sh",
+    "new:product": "node scripts/new-content.mjs product",
+    "new:blog": "node scripts/new-content.mjs blog",
+    "new:photo": "node scripts/new-content.mjs photography"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

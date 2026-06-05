@@ -1,0 +1,64 @@
+{
+  "new-product-doc": {
+    "scope": "markdown",
+    "prefix": "product",
+    "description": "创建新的 product 文档（含 frontmatter）",
+    "body": [
+      "---",
+      "title: ${1:标题}",
+      "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "description: ${2:简短描述}",
+      "---",
+      "",
+      "# ${1:标题}",
+      "",
+      "$0"
+    ]
+  },
+  "new-blog-post": {
+    "scope": "markdown",
+    "prefix": "blog",
+    "description": "创建新的 blog 文章（含 frontmatter）",
+    "body": [
+      "---",
+      "title: ${1:标题}",
+      "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "excerpt: ${2:摘要}",
+      "category: ${3:未分类}",
+      "---",
+      "",
+      "# ${1:标题}",
+      "",
+      "$0"
+    ]
+  },
+  "new-photo-entry": {
+    "scope": "markdown",
+    "prefix": "photo",
+    "description": "创建新的 photography 条目（含 frontmatter）",
+    "body": [
+      "---",
+      "title: ${1:标题}",
+      "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "location: ${2:地点}",
+      "order: 999",
+      "---",
+      "",
+      "$0"
+    ]
+  },
+  "frontmatter-only": {
+    "scope": "markdown",
+    "prefix": "fm",
+    "description": "插入通用 frontmatter 块",
+    "body": [
+      "---",
+      "title: ${1:标题}",
+      "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "description: ${2:描述}",
+      "---",
+      "",
+      "$0"
+    ]
+  }
+}
