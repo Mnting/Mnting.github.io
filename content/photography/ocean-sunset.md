@@ -2,7 +2,7 @@
 title: 海上日落
 location: 三亚, 海南
 date: 2026-02-28
-image: /images/ocean-sunset.png
+image: https://raw.githubusercontent.com/Mnting/images/main/photography/ocean-sunset.png
 order: 4
 ---
 

@@ -227,6 +227,19 @@ for (const [filepath, url] of Object.entries(photographyImages)) {
   imageBySlug[slug] = url
 }
 
+/** Base URL for the image hosting repo (public GitHub raw) */
+const IMAGE_HOST = 'https://raw.githubusercontent.com/Mnting/images/main/photography'
+
+/** Resolve photo src with three-tier fallback:
+ *  1. Local image discovered by Vite (best: optimized, cache-busted)
+ *  2. Explicit `image` field in frontmatter
+ *  3. Constructed remote URL (assumes .png; use frontmatter for other formats) */
+function resolvePhotoSrc(slug: string, frontmatterImage?: string): string {
+  if (imageBySlug[slug]) return imageBySlug[slug]
+  if (frontmatterImage) return frontmatterImage
+  return `${IMAGE_HOST}/${slug}.png`
+}
+
 export interface Photo {
   id: string
   src: string
@@ -242,8 +255,7 @@ export const photos: Photo[] = (Object.entries(photographyModules)
   .map(([filepath, content]) => {
     const slug = parseSlug(filepath)
     const { data, content: body } = matter(content)
-    // Auto-match image by slug, fallback to frontmatter `image` field
-    const imageSrc = imageBySlug[slug] || data.image || ''
+    const imageSrc = resolvePhotoSrc(slug, data.image)
 
     return {
       id: slug,

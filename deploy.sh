@@ -12,12 +12,22 @@ echo ""
 echo "📡 获取 GitHub 仓库信息..."
 node scripts/fetch-github-repos.js
 
-# 2. 构建项目
+# 2. 上传摄影图片到图床仓库
+echo ""
+echo "🖼️  同步图片到图床..."
+bash scripts/upload-images.sh
+
+# 3. 构建项目
 echo ""
 echo "🔨 构建项目..."
 npm run build
 
-# 3. 提交代码到 main（包含 github-projects.json 更新 + 其他内容变更）
+# 4. 删除本地图片（已上传到图床，构建产物在 dist 中）
+echo ""
+echo "🗑️  清理本地图片..."
+rm -f content/photography/*.png content/photography/*.jpg content/photography/*.jpeg content/photography/*.webp content/photography/*.gif content/photography/*.avif 2>/dev/null || true
+
+# 5. 提交代码到 main（包含 github-projects.json 更新 + 其他内容变更）
 echo ""
 echo "📝 提交代码到 main..."
 git add -A
@@ -27,12 +37,12 @@ else
   git commit -m "chore: update site content"
 fi
 
-# 4. 推送 main 分支
+# 6. 推送 main 分支
 echo ""
 echo "📤 推送 main 分支..."
 git push origin main
 
-# 5. 部署到 GitHub Pages（直接调用 gh-pages，避免 npm predeploy 重复构建）
+# 7. 部署到 GitHub Pages（直接调用 gh-pages，避免 npm predeploy 重复构建）
 echo ""
 echo "📦 发布到 GitHub Pages..."
 npx gh-pages -d dist --dotfiles

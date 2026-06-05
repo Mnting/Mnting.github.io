@@ -2,7 +2,7 @@
 title: 城市夜景
 location: 上海, 中国
 date: 2026-03-15
-image: /images/city-night.png
+image: https://raw.githubusercontent.com/Mnting/images/main/photography/city-night.png
 order: 2
 ---
 

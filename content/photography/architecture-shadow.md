@@ -2,7 +2,7 @@
 title: 光影几何
 location: 深圳, 广东
 date: 2026-01-18
-image: /images/architecture-shadow.png
+image: https://raw.githubusercontent.com/Mnting/images/main/photography/architecture-shadow.png
 order: 6
 ---
 

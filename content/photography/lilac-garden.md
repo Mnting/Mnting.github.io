@@ -2,7 +2,7 @@
 title: 丁香花开
 location: 植物园, 北京
 date: 2026-04-10
-image: /images/lilac-garden.png
+image: https://raw.githubusercontent.com/Mnting/images/main/photography/lilac-garden.png
 order: 3
 ---
 
