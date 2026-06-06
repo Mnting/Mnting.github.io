@@ -25,7 +25,7 @@ bash scripts/upload-images.sh
 # 4. 删除本地图片（已复制到 dist/assets/，随部署上线）
 echo ""
 echo "🗑️  清理本地图片..."
-rm -f content/photography/*.png content/photography/*.jpg content/photography/*.jpeg content/photography/*.webp content/photography/*.gif content/photography/*.avif 2>/dev/null || true
+rm -f content/photography/*.png content/photography/*.jpg content/photography/*.jpeg content/photography/*.webp content/photography/*.gif content/photography/*.avif content/photography/*.mp4 content/photography/*.mov content/photography/*.avi content/photography/*.mkv 2>/dev/null || true
 
 # 5. 提交代码到 main（包含 github-projects.json 更新 + 其他内容变更）
 echo ""
