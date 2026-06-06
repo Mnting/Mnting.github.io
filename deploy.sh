@@ -55,7 +55,7 @@ npx gh-pages -d dist --dotfiles --add
 # 9. 清理 dist/assets/ 中的临时图片（已部署到 gh-pages，释放本地空间）
 echo ""
 echo "🧹 清理 dist/assets/ 临时图片..."
-rm -f dist/assets/*.png dist/assets/*.jpg dist/assets/*.jpeg dist/assets/*.webp dist/assets/*.gif dist/assets/*.avif 2>/dev/null || true
+rm -f dist/assets/*.png dist/assets/*.PNG dist/assets/*.jpg dist/assets/*.JPG dist/assets/*.jpeg dist/assets/*.JPEG dist/assets/*.webp dist/assets/*.WEBP dist/assets/*.gif dist/assets/*.GIF dist/assets/*.avif dist/assets/*.AVIF dist/assets/*.mp4 dist/assets/*.MP4 dist/assets/*.mov dist/assets/*.MOV dist/assets/*.avi dist/assets/*.AVI dist/assets/*.mkv dist/assets/*.MKV 2>/dev/null || true
 
 echo ""
 echo "✅ 完成！访问 https://mnting.github.io 查看"
