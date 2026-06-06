@@ -12,22 +12,27 @@ echo ""
 echo "📡 获取 GitHub 仓库信息..."
 node scripts/fetch-github-repos.js
 
-# 2. 构建项目
+# 2. 压缩大文件（图片 >10MB / 视频 >50MB）
+echo ""
+echo "🗜️  检查并压缩大文件..."
+bash scripts/compress-media.sh
+
+# 3. 构建项目
 echo ""
 echo "🔨 构建项目..."
 npm run build
 
-# 3. 复制摄影图片到 dist/assets/（随 gh-pages 一起部署）
+# 4. 复制摄影图片到 dist/assets/（随 gh-pages 一起部署）
 echo ""
 echo "🖼️  复制图片到 dist/assets/..."
 bash scripts/upload-images.sh
 
-# 4. 删除本地图片（已复制到 dist/assets/，随部署上线）
+# 5. 删除本地图片（已复制到 dist/assets/，随部署上线）
 echo ""
 echo "🗑️  清理本地图片..."
 rm -f content/photography/*.png content/photography/*.jpg content/photography/*.jpeg content/photography/*.webp content/photography/*.gif content/photography/*.avif content/photography/*.mp4 content/photography/*.mov content/photography/*.avi content/photography/*.mkv 2>/dev/null || true
 
-# 5. 提交代码到 main（包含 github-projects.json 更新 + 其他内容变更）
+# 6. 提交代码到 main（包含 github-projects.json 更新 + 其他内容变更）
 echo ""
 echo "📝 提交代码到 main..."
 git add -A
@@ -37,17 +42,17 @@ else
   git commit -m "chore: update site content"
 fi
 
-# 6. 推送 main 分支
+# 7. 推送 main 分支
 echo ""
 echo "📤 推送 main 分支..."
 git push origin main
 
-# 7. 部署到 GitHub Pages（--add：只增不删，保护远端已有的图片不被覆盖）
+# 8. 部署到 GitHub Pages（--add：只增不删，保护远端已有的图片不被覆盖）
 echo ""
 echo "📦 发布到 GitHub Pages..."
 npx gh-pages -d dist --dotfiles --add
 
-# 8. 清理 dist/assets/ 中的临时图片（已部署到 gh-pages，释放本地空间）
+# 9. 清理 dist/assets/ 中的临时图片（已部署到 gh-pages，释放本地空间）
 echo ""
 echo "🧹 清理 dist/assets/ 临时图片..."
 rm -f dist/assets/*.png dist/assets/*.jpg dist/assets/*.jpeg dist/assets/*.webp dist/assets/*.gif dist/assets/*.avif 2>/dev/null || true
