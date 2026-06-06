@@ -58,6 +58,25 @@ const LANGUAGE_COLOR_MAP = {
 // 工具函数
 // ============================================================
 
+/**
+ * 从 README 内容中提取描述
+ * 取第一个非标题、非图片、非代码块的有效段落，最长 150 字
+ */
+function extractDescriptionFromReadme(readme) {
+  if (!readme) return ''
+  const lines = readme.split('\n')
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (!trimmed) continue
+    if (trimmed.startsWith('#')) continue
+    if (trimmed.startsWith('>')) return trimmed.replace(/^>\s*/, '')
+    if (trimmed.startsWith('![')) continue
+    if (trimmed.startsWith('```')) continue
+    if (trimmed.length > 10) return trimmed.length > 150 ? trimmed.slice(0, 150) + '...' : trimmed
+  }
+  return ''
+}
+
 function getColor(language) {
   return LANGUAGE_COLOR_MAP[language] || 'from-gray-500/10 to-gray-400/10'
 }
@@ -94,12 +113,59 @@ function ensureDir(filePath) {
   }
 }
 
+/**
+ * 获取仓库 README 内容
+ * 1. 先尝试 raw 直链（公开仓库，无需认证）
+ * 2. 失败后用 GitHub API（私有仓库需要认证，返回 base64）
+ */
+const FETCH_TIMEOUT = 10_000 // 10 秒超时
+
+async function fetchReadme(repoName, branch, token) {
+  // 尝试 raw 直链
+  const rawUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${repoName}/${branch}/README.md`
+  try {
+    let res = await fetch(rawUrl, { signal: AbortSignal.timeout(FETCH_TIMEOUT) })
+    if (res.ok) return await res.text()
+  } catch {}
+
+  // 尝试小写
+  try {
+    let res = await fetch(`https://raw.githubusercontent.com/${GITHUB_USER}/${repoName}/${branch}/readme.md`, { signal: AbortSignal.timeout(FETCH_TIMEOUT) })
+    if (res.ok) return await res.text()
+  } catch {}
+
+  // 通过 API 获取（支持私有仓库）
+  if (!token) return null
+
+  try {
+    const apiHeaders = {
+      'User-Agent': 'Mnting-Portfolio/1.0',
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github.v3+json',
+    }
+    const apiRes = await fetch(
+      `https://api.github.com/repos/${GITHUB_USER}/${repoName}/readme`,
+      { headers: apiHeaders, signal: AbortSignal.timeout(FETCH_TIMEOUT) }
+    )
+    if (apiRes.ok) {
+      const data = await apiRes.json()
+      if (data.encoding === 'base64' && data.content) {
+        return Buffer.from(data.content, 'base64').toString('utf-8')
+      }
+    }
+  } catch {}
+
+  return null
+}
+
 // ============================================================
 // 主逻辑
 // ============================================================
 
 async function main() {
   console.log('📡 获取 GitHub 仓库信息...')
+
+  const token = process.env.GITHUB_TOKEN
 
   // 1. 检查缓存
   const existing = readExistingData()
@@ -114,15 +180,22 @@ async function main() {
   let repos
   try {
     const headers = { 'User-Agent': 'Mnting-Portfolio/1.0' }
-    const token = process.env.GITHUB_TOKEN
     if (token) {
       headers['Authorization'] = `Bearer ${token}`
+      console.log('   🔐 已检测到 GITHUB_TOKEN，将获取私有仓库')
+    } else {
+      console.log('   💡 提示：设置 GITHUB_TOKEN 环境变量可获取私有仓库')
+      console.log('      1. 创建 token: https://github.com/settings/tokens (勾选 repo 权限)')
+      console.log('      2. export GITHUB_TOKEN=ghp_xxxx')
     }
 
-    const url = `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&type=owner&sort=updated`
+    // /user/repos 返回认证用户的所有仓库（含私有），/users/:user/repos 只返回公开
+    const url = token
+      ? `https://api.github.com/user/repos?per_page=100&type=owner&sort=updated`
+      : `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&type=owner&sort=updated`
     console.log(`   GET ${url}`)
 
-    const res = await fetch(url, { headers })
+    const res = await fetch(url, { headers, signal: AbortSignal.timeout(FETCH_TIMEOUT) })
 
     if (!res.ok) {
       throw new Error(`GitHub API 返回 ${res.status}: ${res.statusText}`)
@@ -151,10 +224,6 @@ async function main() {
       console.log(`   ⏭  跳过排除列表: ${repo.name}`)
       return false
     }
-    if (!repo.description) {
-      console.log(`   ⏭  跳过无描述: ${repo.name}`)
-      return false
-    }
     return true
   })
 
@@ -168,23 +237,11 @@ async function main() {
 
     try {
       const branch = repo.default_branch || 'main'
-      const readmeUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${repo.name}/${branch}/README.md`
-
-      const res = await fetch(readmeUrl)
-      if (res.ok) {
-        readmeContent = await res.text()
+      readmeContent = await fetchReadme(repo.name, branch, token)
+      if (readmeContent) {
         console.log(`      ✅ README (${readmeContent.length} 字符)`)
       } else {
-        // 尝试小写 readme.md
-        const res2 = await fetch(
-          `https://raw.githubusercontent.com/${GITHUB_USER}/${repo.name}/${branch}/readme.md`
-        )
-        if (res2.ok) {
-          readmeContent = await res2.text()
-          console.log(`      ✅ readme.md (${readmeContent.length} 字符)`)
-        } else {
-          console.log(`      ⚠️  无 README`)
-        }
+        console.log(`      ⚠️  无 README`)
       }
     } catch (err) {
       console.log(`      ⚠️  获取 README 失败: ${err.message}`)
@@ -193,7 +250,7 @@ async function main() {
     projects.push({
       slug: slugify(repo.name),
       title: titleFromRepoName(repo.name),
-      description: repo.description || '',
+      description: repo.description || extractDescriptionFromReadme(readmeContent),
       date: repo.pushed_at?.slice(0, 10) || undefined,
       tags: [...(repo.topics || []), repo.language].filter(Boolean),
       link: repo.homepage || undefined,

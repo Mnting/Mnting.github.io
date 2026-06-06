@@ -1,7 +1,169 @@
 {
-  "_generated": "2026-06-04T03:32:21.149Z",
+  "_generated": "2026-06-06T16:14:17.516Z",
   "_source": "github-api",
   "projects": [
+    {
+      "slug": "mnting",
+      "title": "Mnting",
+      "description": "emoji：https://emoji.muan.co/",
+      "date": "2026-06-05",
+      "tags": [],
+      "github": "https://github.com/Mnting/Mnting",
+      "stars": 0,
+      "updatedAt": "2026-06-05T15:51:25Z",
+      "color": "from-gray-500/10 to-gray-400/10",
+      "rawContent": "<!--\nemoji：https://emoji.muan.co/\nicon: https://simpleicons.org/\n-->\n<picture decoding=\"async\" loading=\"lazy\">\n  <source media=\"(prefers-color-scheme: light)\" srcset=\"https://pixel-profile.vercel.app/api/github-stats?username=Mnting&theme=journey>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://pixel-profile.vercel.app/api/github-stats?username=Mnting&theme=journey&screen_effect=true\">\n  <img alt=\"github stats\" src=\"https://pixel-profile.vercel.app/api/github-stats?username=Mnting&theme=journey\">\n</picture>\n\n<img src=\"./github-metrics.svg\" alt=\"Metrics\" width=\"100%\">\n\n---\n\n## Mnting（跳跳虎） 👨‍💻\n\n\n### 两只狗狗的饲养员 关于 | About\n\n- **像是撒出耕田落到道边儿的麦子，疯长，抽条，不结一点儿穗儿，简直像狗尾巴草。风一吹了比谁都招摇，招摇得生动，招摇得漂亮，活的。会被人问这是麦子吗，麦子能长成这样吗，麦子长成这样好看吗，麦子长成这样有用吗。 他不管你，就这么在道边儿自己长自己的玩儿去，满不在乎又清醒地长。很舒服的感觉。** \n\n\n---\n\n### 🛠 技术栈(学习时间线) | Tech Stack(Learning timeline)\n\n- 2023🐬 &#160;\n  ![React](https://img.shields.io/badge/18+-React-333333?style=flat&logo=react)\n  ![AntDesign](https://img.shields.io/badge/-AntDesign-333333?style=flat&logo=AntDesign)\n  ![ChatGPT](https://img.shields.io/badge/-ChatGPT-333333?style=flat&logo=ChatGPT)\n\n- 2022😄 &#160;![VScode](https://img.shields.io/badge/-VScode-333333?style=flat&logo=VisualStudioCode)\n  ![Xcode](https://img.shields.io/badge/-Xcode-333333?style=flat&logo=xcode)\n  ![Wordpress](https://img.shields.io/badge/-Wordpress-333333?style=flat&logo=Wordpress)\n  ![GithubActions](https://img.shields.io/badge/-GithubActions-333333?style=flat&logo=githubactions)\n  ![PHP](https://img.shields.io/badge/-PHP-333333?style=flat&logo=php)\n\n- 2021🚀 &#160;\n  ![RaspberryPi](https://img.shields.io/badge/-RaspberryPi-333333?style=flat&logo=RaspberryPi)\n  ![Three.js](https://img.shields.io/badge/-Three.js-333333?style=flat&logo=Three.js)\n  ![Vue.js](https://img.shields.io/badge/3.0-Vue.js-333333?style=flat&logo=Vue.js)\n  ![Docker](https://img.shields.io/badge/-Docker-333333?style=flat&logo=Docker)\n  ![DockerCompose](https://img.shields.io/badge/-DockerCompose-333333?style=flat&logo=Docker)\n  ![Vuepress](https://img.shields.io/badge/1.0-Vuepress-333333?style=flat&logo=vue.js)\n  ![Jenkins](https://img.shields.io/badge/-Jenkins-333333?style=flat&logo=Jenkins)\n  ![YAPI](https://img.shields.io/badge/-YAPI-333333?style=flat&logo=YAPI)\n  ![Yarn](https://img.shields.io/badge/-Yarn-333333?style=flat&logo=yarn)\n  ![TypeScript](https://img.shields.io/badge/-TypeScript-333333?style=flat&logo=TypeScript)\n  ![Pnpm](https://img.shields.io/badge/-Pnpm-333333?style=flat&logo=pnpm)\n- 2020⚡️ &#160; ![C++](https://img.shields.io/badge/-C++-333333?style=flat&logo=C%2b%2b)\n  ![LeetCode](https://img.shields.io/badge/-LeetCode-333333?style=flat&logo=LeetCode)\n  ![Gitblit](https://img.shields.io/badge/-Gitblit-333333?style=flat&logo=Gitblit)\n  ![ElementUI](https://img.shields.io/badge/-ElementUI-333333?style=flat&logo=/e/)\n  ![VUE-CLI](https://img.shields.io/badge/-VueCli-333333?style=flat&logo=Vue.js)\n  ![VueRouter](https://img.shields.io/badge/-VueRouter-333333?style=flat&logo=Vue.js)\n  ![VueX](https://img.shields.io/badge/-VueX-333333?style=flat&logo=Vue.js)\n  ![Postman](https://img.shields.io/badge/-Postman-333333?style=flat&logo=Postman)\n- 2019💻 &#160;\n  ![Node.js](https://img.shields.io/badge/-Node.js-333333?style=flat&logo=node.js)\n  ![Npm](https://img.shields.io/badge/-Npm-333333?style=flat&logo=npm)\n  ![Vue.js](https://img.shields.io/badge/2.0-Vue.js-333333?style=flat&logo=Vue.js)\n  ![Mock.js](https://img.shields.io/badge/-Mock.js-333333?style=flat&logo=Mock.js)\n  ![Nginx](https://img.shields.io/badge/-Nginx-333333?style=flat&logo=Nginx&logoColor=#009639)\n  ![IntelliJIDEA](https://img.shields.io/badge/-IntelliJIDEA-333333?style=flat&logo=IntelliJIDEA)\n  ![Spring](https://img.shields.io/badge/-Spring-333333?style=flat&logo=Spring)\n  ![Maven](https://img.shields.io/badge/-Maven-333333?style=flat&logo=Maven)\n  ![SpringBoot](https://img.shields.io/badge/-SpringBoot-333333?style=flat&logo=SpringBoot)\n  ![Redis](https://img.shields.io/badge/-Redis-333333?style=flat&logo=Redis)\n  ![VisualCode](https://img.shields.io/badge/-VisualCode-333333?style=flat&logo=VisualStudioCode)\n  ![R](https://img.shields.io/badge/-R-333333?style=flat&logo=R)\n  ![RStudio](https://img.shields.io/badge/-RStudio-333333?style=flat&logo=RStudio)\n  ![WeChatMiniApp](https://img.shields.io/badge/-WeChatMiniApp-333333?style=flat&logo=WeChat)\n  ![VMware](https://img.shields.io/badge/-VMware-333333?style=flat&logo=VMware)\n- 2018🛢 &#160; ![Git](https://img.shields.io/badge/-Git-333333?style=flat&logo=git)\n  ![GitHub](https://img.shields.io/badge/-GitHub-333333?style=flat&logo=github)\n  ![Markdown](https://img.shields.io/badge/-Markdown-333333?style=flat&logo=markdown)\n  ![Anaconda](https://img.shields.io/badge/-Anaconda-333333?style=flat&logo=Anaconda)\n  ![PyCharm](https://img.shields.io/badge/-PyCharm-333333?style=flat&logo=PyCharm)\n  ![Python](https://img.shields.io/badge/-Python-333333?style=flat&logo=python)\n  ![MySQL](https://img.shields.io/badge/-MySQL-333333?style=flat&logo=mysql)\n  ![SQLite](https://img.shields.io/badge/-SQLite-333333?style=flat&logo=SQLite)\n  ![MongoDB](https://img.shields.io/badge/-MongoDB-333333?style=flat&logo=mongodb)\n  ![Pandas](https://img.shields.io/badge/-Pandas-333333?style=flat&logo=pandas)\n  ![HTML5](https://img.shields.io/badge/-HTML5-333333?style=flat&logo=HTML5)\n  ![CSS3](https://img.shields.io/badge/-CSS3-333333?style=flat&logo=CSS3)\n  ![JavaScript](https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=JavaScript)\n  ![JQuery](https://img.shields.io/badge/-JQuery-333333?style=flat&logo=JQuery)\n  ![ECharts](https://img.shields.io/badge/-ECharts-333333?style=flat&logo=ApacheECharts)\n  ![JSP](https://img.shields.io/badge/-JSP-333333?style=flat&logo=JSP)\n  ![Tomcat](https://img.shields.io/badge/-Tomcat-333333?style=flat&logo=ApacheTomcat)\n  ![ShadowsocksR](https://img.shields.io/badge/-ShadowsocksR-333333?style=flat&logo=ShadowsocksR)\n- 2016🌱 &#160;![DevC++](https://img.shields.io/badge/-DevC++-333333?style=flat&logo=C%2b%2b)\n  ![C](https://img.shields.io/badge/-C-333333?style=flat&logo=C)\n  ![Java](https://img.shields.io/badge/-Java-333333?style=flat&logo=Java)\n  ![Eclipse](https://img.shields.io/badge/-Eclipse-333333?style=flat&logo=EclipseIDE)\n  ![MicrosoftSQLServer](https://img.shields.io/badge/-SQLServer-333333?style=flat&logo=MicrosoftSQLServer)\n  ![Ubuntu](https://img.shields.io/badge/-Ubuntu-333333?style=flat&logo=Ubuntu)\n  ![CentOS](https://img.shields.io/badge/-CentOS-333333?style=flat&logo=CentOs)\n  ![Shell](https://img.shields.io/badge/-Shell-333333?style=flat&logo=PowerShell)\n  ![.NET](https://img.shields.io/badge/-.NET-333333?style=flat&logo=.NET)\n  ![Linux](https://img.shields.io/badge/-Linux-333333?style=flat&logo=Linux)\n  ![Handshake](https://img.shields.io/badge/-Handshake-333333?style=flat&logo=Handshake)\n\n> 只记录了我有实际接触使用的技能/框架。忽略小框架/小技能。\n\n<!-- <img align=\"left\" src=\"https://github-readme-stats.vercel.app/api/top-langs/?username=rakers1024&theme=tokyonight\" />\n<img align=\"left\" src=\"https://github-readme-stats.vercel.app/api?username=rakers1024&show_icons=true&theme=tokyonight&line_height=40&v=5\" /> -->\n"
+    },
+    {
+      "slug": "blog",
+      "title": "Blog",
+      "description": "这是一个基于 Vite + React 的个人网页演示，包含：",
+      "date": "2026-06-01",
+      "tags": [
+        "JavaScript"
+      ],
+      "github": "https://github.com/Mnting/blog",
+      "language": "JavaScript",
+      "stars": 0,
+      "updatedAt": "2026-06-01T16:13:54Z",
+      "color": "from-yellow-500/10 to-amber-500/10",
+      "rawContent": "# 个人网页\n\n这是一个基于 Vite + React 的个人网页演示，包含：\n\n- 首页：摄像头/鼠标驱动 3D 立体卡片，前图 `fimage.png` 到底图 `bimage.png` 的渐变过渡。\n- 随笔：从 `content/posts` 读取 Markdown 文件并渲染。\n- 读书笔记：占位 todolist 模块，后续可扩展。\n- 关于我：同 `me.png` 做半调网点效果，鼠标滑过区域会合并网点并显原图。\n\n## 运行\n\n```bash\ncd /Users/taotianhao/coding/blog\nnpm install\nnpm run dev\n```\n\n打开浏览器访问 `http://localhost:4173`。\n\n## 目录结构\n\n- `src/`：React 组件与样式\n- `content/posts/`：Markdown 随笔文件\n- `public/`：图片资源与静态文件\n\n## 提示\n\n- 若摄像头权限不可用，首页会退回到鼠标控制。\n- 若要添加新随笔，直接在 `content/posts` 中新增 `.md` 文件即可。\n"
+    },
+    {
+      "slug": "greyrhino",
+      "title": "GreyRhino",
+      "description": "基于 Pace GreyRhino Pro 功能参考，使用 SwiftUI + SwiftData + iCloud 技术栈",
+      "date": "2026-05-29",
+      "tags": [
+        "Swift"
+      ],
+      "github": "https://github.com/Mnting/GreyRhino",
+      "language": "Swift",
+      "stars": 0,
+      "updatedAt": "2026-05-29T09:29:36Z",
+      "color": "from-orange-500/10 to-red-500/10",
+      "rawContent": "# GreyRhino - iOS 智能记账应用 项目规划文档\n\n> 基于 Pace GreyRhino Pro 功能参考，使用 SwiftUI + SwiftData + iCloud 技术栈\n\n---\n\n## 一、项目概述\n\n### 1.1 产品定位\nGreyRhino 是一款面向个人用户的 iOS 智能记账应用，专注于帮助用户追踪日常消费、管理多个钱包/账户、设定预算目标，并通过可视化统计分析提供消费洞察。应用以极简优雅的 UI 设计和流畅的交互体验为核心竞争力。\n\n### 1.2 目标用户\n- 希望养成记账习惯的年轻用户（20-35 岁）\n- 需要管理多账户财务的个人用户\n- 关注消费控制和储蓄目标的理财入门用户\n\n### 1.3 核心价值主张\n- **极简操作**：3 秒快速记账\n- **智能洞察**：自动分析消费模式，提供个性化建议\n- **多钱包管理**：统一管理所有资金账户\n- **隐私优先**：数据仅存储在本地 + iCloud，无第三方服务器\n\n---\n\n## 二、技术架构设计\n\n### 2.1 技术栈选型\n\n| 层级 | 技术方案 | 说明 |\n|------|---------|------|\n| UI 框架 | SwiftUI (iOS 17+) | 原生声明式 UI，支持最新动画和交互 |\n| 数据持久化 | SwiftData | Apple 最新 ORM 框架，与 SwiftUI 深度集成 |\n| 云同步 | CloudKit (via SwiftData) | 通过 SwiftData 内置 iCloud 同步支持 |\n| 图表库 | Swift Charts | Apple 原生图表框架 |\n| 小组件 | WidgetKit | 主屏幕小组件 |\n| 自动化 | App Intents | Siri Shortcuts 自动化记账 |\n| 本地通知 | UserNotifications | 预算超支提醒、记账提醒 |\n| 内购 | StoreKit 2 | Pro 订阅/终身买断 |\n| 最低支持版本 | iOS 17.0+ | 充分利用 SwiftData 和最新 API |\n| 开发工具 | Xcode 16+ | 最新版本，支持 Swift 6 |\n\n### 2.2 架构模式：MVVM + Clean Architecture\n\n```\n┌─────────────────────────────────────────────────┐\n│                  Presentation Layer              │\n│  ┌─────────┐  ┌─────────┐  ┌─────────┐         │\n│  │  Views   │  │ViewModels│ │Navigation│         │\n│  │(SwiftUI) │  │(@Observable)│ │(Router)│        │\n│  └────┬─────┘  └────┬─────┘  └─────────┘        │\n│       │              │                            │\n├───────┼──────────────┼────────────────────────────┤\n│       │      Domain Layer                         │\n│  ┌────┴─────┐  ┌────┴─────┐  ┌──────────┐       │\n│  │ Use Cases│  │  Models   │  │Protocols │       │\n│  │ (Services)│ │(Entities) │  │(Repos)   │       │\n│  └────┬─────┘  └──────────┘  └────┬─────┘       │\n│       │                            │              │\n├───────┼────────────────────────────┼──────────────┤\n│       │       Data Layer           │              │\n│  ┌────┴─────┐  ┌──────────┐  ┌────┴─────┐       │\n│  │SwiftData │  │ CloudKit │  │CSV/Import│       │\n│  │Repository│  │  Sync    │  │ Service  │       │\n│  └──────────┘  └──────────┘  └──────────┘       │\n└─────────────────────────────────────────────────┘\n```\n\n### 2.3 项目目录结构\n\n```\nGreyRhino/\n├── GreyRhinoApp.swift                    # App 入口\n├── Navigation/\n│   ├── AppTabView.swift             # 主 Tab 导航\n│   └── NavigationRouter.swift       # 导航路由管理\n│\n├── Models/                          # SwiftData 数据模型\n│   ├── Transaction.swift            # 交易记录\n│   ├── Wallet.swift                 # 钱包/账户\n│   ├── Category.swift               # 消费分类\n│   ├── Budget.swift                 # 预算设置\n│   └── Currency.swift               # 货币类型\n│\n├── Services/                        # 业务逻辑层\n│   ├── TransactionService.swift     # 交易相关业务\n│   ├── BudgetService.swift          # 预算计算服务\n│   ├── StatisticsService.swift      # 统计分析服务\n│   ├── ImportService.swift          # 账单导入服务\n│   ├── ExportService.swift          # 数据导出服务\n│   ├── CurrencyService.swift        # 货币转换服务\n│   └── NotificationService.swift    # 通知管理服务\n│\n├── Features/                        # 功能模块\n│   ├── Today/                       # 今天（首页）\n│   │   ├── TodayView.swift\n│   │   ├── TodayViewModel.swift\n│   │   ├── BudgetCardView.swift\n│   │   ├── MonthlySummaryView.swift\n│   │   └── SavingsRatioView.swift\n│   │\n│   ├── Wallet/                      # 钱包管理\n│   │   ├── WalletListView.swift\n│   │   ├── WalletDetailView.swift\n│   │   ├── WalletCardView.swift\n│   │   ├── AddWalletView.swift\n│   │   └── WalletViewModel.swift\n│   │\n│   ├── History/                     # 历史记录\n│   │   ├── HistoryView.swift\n│   │   ├── HistoryViewModel.swift\n│   │   ├── TransactionRowView.swift\n│   │   ├── HistoryFilterView.swift\n│   │   └── OverviewCardView.swift\n│   │\n│   ├── Statistics/                  # 统计分析\n│   │   ├── StatisticsView.swift\n│   │   ├── StatisticsViewModel.swift\n│   │   ├── CategoryChartView.swift\n│   │   ├── WeeklyChartView.swift\n│   │   ├── MonthlyChartView.swift\n│   │   ├── AnalysisView.swift\n│   │   └── InsightCardView.swift\n│   │\n│   ├── AddTransaction/              # 添加交易\n│   │   ├── AddTransactionView.swift\n│   │   ├── AddTransactionViewModel.swift\n│   │   ├── NumpadView.swift\n│   │   └── CategoryPickerView.swift\n│   │\n│   ├── Settings/                    # 设置\n│   │   ├── SettingsView.swift\n│   │   ├── CategoryManageView.swift\n│   │   ├── BudgetSettingView.swift\n│   │   └── CurrencySettingView.swift\n│   │\n│   └── Pro/                         # 订阅/内购\n│       ├── ProFeaturesView.swift\n│       ├── PaywallView.swift\n│       └── StoreManager.swift\n│\n├── Components/                      # 可复用 UI 组件\n│   ├── ProgressBarView.swift\n│   ├── CategoryIconView.swift\n│   ├── AmountDisplayView.swift\n│   ├── CardContainerView.swift\n│   └── EmptyStateView.swift\n│\n├── Extensions/                      # 扩展工具\n│   ├── Date+Extensions.swift\n│   ├── Decimal+Extensions.swift\n│   ├── Color+Extensions.swift\n│   └── NumberFormatter+Extensions.swift\n│\n├── Resources/\n│   ├── Assets.xcassets               # 图片资源\n│   ├── Localizable.strings           # 国际化\n│   └── CategoryIcons/                # 分类图标\n│\n├── Widget/                          # 主屏幕小组件\n│   ├── GreyRhinoWidget.swift\n│   ├── WidgetProvider.swift\n│   └── WidgetViews/\n│\n└── Intents/                         # App Intents (Shortcuts)\n    ├── AddTransactionIntent.swift\n    └── QueryBalanceIntent.swift\n```\n\n---\n\n## 三、数据模型设计\n\n### 3.1 核心实体 ER 图\n\n```\n┌──────────────┐     1:N     ┌──────────────────┐\n│    Wallet     │◄───────────│   Transaction     │\n│──────────────│             │──────────────────│\n│ id: UUID      │             │ id: UUID          │\n│ name: String  │             │ amount: Decimal   │\n│ emoji: String │             │ type: TransType   │\n│ color: String │             │ note: String?     │\n│ balance: Decimal│           │ date: Date        │\n│ isDefault: Bool│            │ location: String? │\n│ sortOrder: Int │            │ createdAt: Date   │\n│ createdAt: Date│            │ updatedAt: Date   │\n└──────┬───────┘             └───────┬──────────┘\n       │                              │\n       │                              │ N:1\n       │                     ┌────────┴─────────┐\n       │                     │    Category       │\n       │                     │──────────────────│\n       │                     │ id: UUID          │\n       │                     │ name: String      │\n       │                     │ icon: String      │\n       │                     │ color: String     │\n       │                     │ type: CategoryType│\n       │                     │ isSystem: Bool    │\n       │                     │ sortOrder: Int    │\n       │                     └──────────────────┘\n       │\n       │ 1:1\n┌──────┴───────┐\n│    Budget     │\n│──────────────│\n│ id: UUID      │\n│ amount: Decimal│\n│ period: Period │\n│ savingsGoal: Double│\n│ startDate: Date│\n│ isActive: Bool │\n└──────────────┘\n```\n\n### 3.2 SwiftData 模型定义\n\n#### Transaction（交易记录）\n```swift\n@Model\nfinal class Transaction {\n    var id: UUID = UUID()\n    var amount: Decimal           // 金额（正数表示收入，负数表示支出）\n    var type: TransactionType     // .income / .expense\n    var note: String?             // 备注\n    var date: Date                // 交易日期时间\n    var location: String?         // 位置/商户\n    var createdAt: Date = Date()\n    var updatedAt: Date = Date()\n    \n    // 关联关系\n    var wallet: Wallet?           // 所属钱包\n    var category: Category?       // 所属分类\n}\n\nenum TransactionType: String, Codable {\n    case income   // 收入\n    case expense  // 支出\n}\n```\n\n#### Wallet（钱包/账户）\n```swift\n@Model\nfinal class Wallet {\n    var id: UUID = UUID()\n    var name: String              // 钱包名称（如\"消费\"、\"工资\"、\"雪球\"）\n    var emoji: String             // 钱包图标 emoji\n    var colorHex: String          // 卡片背景色\n    var balance: Decimal = 0      // 当前余额\n    var isDefault: Bool = false   // 是否为默认钱包\n    var sortOrder: Int = 0        // 排序\n    var createdAt: Date = Date()\n    \n    // 关联关系\n    @Relationship(deleteRule: .cascade, inverse: \\Transaction.wallet)\n    var transactions: [Transaction] = []\n    \n    var budget: Budget?           // 关联的预算\n}\n```\n\n#### Category（分类）\n```swift\n@Model\nfinal class Category {\n    var id: UUID = UUID()\n    var name: String              // 分类名称（如\"食物\"、\"购物\"、\"交通\"）\n    var icon: String              // SF Symbol 名称\n    var colorHex: String          // 图标背景色\n    var type: CategoryType        // .income / .expense\n    var isSystem: Bool = false    // 是否为系统预设分类\n    var sortOrder: Int = 0\n    \n    @Relationship(deleteRule: .nullify, inverse: \\Transaction.category)\n    var transactions: [Transaction] = []\n}\n\nenum CategoryType: String, Codable {\n    case income\n    case expense\n}\n```\n\n#### Budget（预算）\n```swift\n@Model\nfinal class Budget {\n    var id: UUID = UUID()\n    var amount: Decimal           // 预算金额\n    var period: BudgetPeriod      // 预算周期\n    var savingsGoalPercent: Double // 储蓄目标百分比（如 0.2 表示 20%）\n    var startDate: Date\n    var isActive: Bool = true\n    \n    @Relationship(inverse: \\Wallet.budget)\n    var wallet: Wallet?\n}\n\nenum BudgetPeriod: String, Codable {\n    case daily\n    case weekly\n    case monthly\n    case yearly\n}\n```\n\n#### UserSettings（用户设置 - 非 SwiftData，使用 @AppStorage）\n```swift\n// 使用 @AppStorage 存储在 UserDefaults 中\nstruct UserSettings {\n    @AppStorage(\"defaultCurrency\") var defaultCurrency: String = \"CNY\"\n    @AppStorage(\"enableAutoCurrency\") var enableAutoCurrency: Bool = false\n    @AppStorage(\"enableNotifications\") var enableNotifications: Bool = true\n    @AppStorage(\"reminderTime\") var reminderTime: Date = ...\n    @AppStorage(\"isPro\") var isPro: Bool = false\n    @AppStorage(\"themeMode\") var themeMode: String = \"system\"\n}\n```\n\n### 3.3 预设分类数据\n\n#### 支出分类\n| 图标 | 名称 | SF Symbol |\n|-----|------|-----------|\n| 🍽 | 食物 | fork.knife |\n| 🛍 | 购物 | bag.fill |\n| 🚗 | 交通 | car.fill |\n| 🏠 | 住房 | house.fill |\n| 💊 | 医疗 | cross.case.fill |\n| 🎮 | 娱乐 | gamecontroller.fill |\n| 📚 | 教育 | book.fill |\n| 💼 | 工作 | briefcase.fill |\n| 🔄 | 转账 | arrow.left.arrow.right |\n| 📱 | 通讯 | phone.fill |\n| ✈️ | 旅行 | airplane |\n| ⚙️ | 其他 | ellipsis.circle.fill |\n\n#### 收入分类\n| 图标 | 名称 | SF Symbol |\n|-----|------|-----------|\n| 💰 | 工资 | banknote.fill |\n| 📈 | 投资 | chart.line.uptrend.xyaxis |\n| 🎁 | 奖金 | gift.fill |\n| 💵 | 兼职 | dollarsign.circle.fill |\n| 🏦 | 利息 | building.columns.fill |\n| 🔄 | 退款 | arrow.uturn.left |\n| ⚙️ | 其他 | ellipsis.circle.fill |\n\n---\n\n## 四、功能模块详细设计\n\n### 4.1 Tab 1 - 今天（首页仪表盘）\n\n**功能描述**：用户打开 App 的第一屏，展示当日/当月的核心财务概览。\n\n**UI 组件**：\n1. **标题卡片**（顶部大卡片）\n   - 绿色渐变背景\n   - 显示当前活跃钱包名称（如\"消费\"）\n   - 大号加粗字体\n   \n2. **预算进度卡片**\n   - 显示\"超预算 ¥XX\" 或 \"剩余预算 ¥XX\"\n   - 右侧显示\"已花 XX\"\n   - 底部橙色/绿色进度条（根据是否超支变色）\n   \n3. **双列信息卡**\n   - 左卡：本月支出总额（如 ¥28438.72）\n   - 右卡：储蓄金额（如 ¥14645.63，红色表示负储蓄）\n   \n4. **储蓄比例卡片**\n   - 显示当前储蓄比例（如 -106.2%）\n   - 右侧显示目标储蓄比例（如 20%）\n   \n5. **快速添加按钮**（FAB）\n   - 右下角圆形 \"+\" 按钮\n   - 点击弹出添加交易页面\n\n**业务逻辑**：\n- 预算进度 = 已花金额 / 预算金额\n- 储蓄金额 = 收入 - 支出\n- 储蓄比例 = 储蓄金额 / 收入 × 100%\n- 预算超支时进度条变橙/红色\n\n---\n\n### 4.2 Tab 2 - 钱包\n\n**功能描述**：管理多个钱包/账户，展示总资产概览。\n\n**UI 组件**：\n1. **总资产头部**\n   - 显示\"总资产\"标签 + 帮助按钮\n   - 大号红色金额显示（如 ¥113K）\n   - 右上角 \"+\" 添加钱包按钮\n   \n2. **钱包卡片堆叠**\n   - 类似 Apple Wallet 的卡片堆叠效果\n   - 每个钱包卡片有独立颜色和名称\n   - 支持上下拖动展开/收起\n   - 最前面的卡片完全展开，显示钱包名 + emoji + 大标题\n\n**交互**：\n- 点击卡片进入钱包详情\n- 长按卡片可编辑/删除\n- 上滑展开所有卡片，下滑收起\n- 添加钱包弹出表单（名称、emoji、颜色选择）\n\n**免费/Pro 限制**：\n- 免费版：最多 2 个钱包\n- Pro 版：无限钱包\n\n---\n\n### 4.3 Tab 3 - 历史记录\n\n**功能描述**：展示所有交易记录，支持筛选和搜索。\n\n**UI 组件**：\n1. **概览卡片**\n   - 三列数据：支出 / 收入 / 净额\n   - 净额正数显示绿色，负数显示红色\n   \n2. **筛选栏**\n   - 分类下拉选择器（全部 / 特定分类）\n   - 时间范围选择器（最近 7 天 / 本月 / 自定义）\n   - 编辑按钮（进入批量编辑模式）\n   \n3. **交易列表**\n   - 按日期分组（今天 / 昨天 / 具体日期）\n   - 每组显示日期 + 当日净收支\n   - 每条记录显示：分类图标 | 分类名称 | 时间 · 备注 | 金额\n   - 支出显示 \"-¥XX\"（黑色），收入显示 \"+¥XX\"（绿色）\n   \n4. **交互**：\n   - 左滑删除\n   - 点击查看/编辑详情\n   - 下拉加载更多\n   - 搜索功能（按备注、商户搜索）\n\n---\n\n### 4.4 Tab 4 - 统计\n\n**功能描述**：提供多维度的消费统计分析。\n\n**子页面（分段控制器切换）**：\n\n#### 4.4.1 分类视图\n- **今日支出卡片**\n  - 大号金额显示\n  - 对比昨日标签（如\"低很多\"/\"高很多\"）\n  - 对比平均标签\n- **钱包分布**\n  - 各钱包消费占比 + 进度条\n- **支出类别卡片**\n  - 环形图（Donut Chart）展示各分类占比\n  - 分析范围选择器（最近 7/30/90 天）\n  - 总支出金额\n- **智能洞察**\n  - \"注意这里\" 提示卡片\n  - 自动分析消费集中度\n  - 提供个性化建议\n\n#### 4.4.2 周视图\n- 柱状图展示本周每日消费\n- 周环比对比\n- 日均消费\n\n#### 4.4.3 月视图\n- 折线图展示月度消费趋势\n- 月环比/同比对比\n- 各月支出/收入汇总\n\n#### 4.4.4 分析视图\n- 消费趋势分析\n- 异常消费检测\n- 储蓄目标达成进度\n- AI 消费建议（本地规则引擎）\n\n**免费/Pro 限制**：\n- 免费版：仅分类视图\n- Pro 版：解锁周/月/分析视图\n\n---\n\n### 4.5 添加交易（模态页面）\n\n**功能描述**：快速记录一笔收入或支出。\n\n**UI 组件**：\n1. **金额输入区**\n   - 大号数字显示\n   - 自定义数字键盘（0-9, 小数点, 删除）\n   - 支出/收入切换 Tab\n   \n2. **分类选择网格**\n   - 2-4 行横向滚动的分类图标网格\n   - 每个分类显示图标 + 名称\n   - 选中状态高亮\n   \n3. **附加信息**\n   - 钱包选择器（从哪个钱包支出）\n   - 日期选择器（默认今天）\n   - 备注输入框\n   - 位置输入（可选）\n   \n4. **提交按钮**\n   - 显眼的确认按钮\n   - 提交后触觉反馈 + 关闭\n\n---\n\n### 4.6 设置 & Pro 功能\n\n**设置页面**：\n- 预算管理（月预算金额、储蓄目标）\n- 分类管理（添加/编辑/删除/排序）\n- 默认货币\n- 通知设置（每日记账提醒时间）\n- 数据导出（CSV）\n- 数据导入（微信/支付宝账单）\n- 关于 / 评价 / 反馈\n\n**Pro 功能列表**（内购）：\n| 功能 | 免费版 | Pro 版 |\n|-----|--------|--------|\n| 附加钱包 | 最多 2 个 | 无限 |\n| 自定义分类 | 最多 5 个 | 无限 |\n| 扩展分析 | 仅分类 | 周/月/分析 |\n| 导出数据备份 | ❌ | ✅ |\n| 主屏幕小组件 | ❌ | ✅ |\n| 自动切换货币 | ❌ | ✅ |\n| 自动化记账 | ❌ | ✅ |\n| 导入账单 | ❌ | ✅ |\n\n**内购方案**：\n- 月订阅：¥12/月\n- 年订阅：¥68/年（相当于 ¥5.67/月）\n- 终身买断：¥128\n\n---\n\n## 五、UI/UX 设计规范\n\n### 5.1 设计语言\n\n**风格定位**：iOS 原生风格 + 卡片化设计 + 大字体层级\n\n**参考应用**：Pace GreyRhino（截图参考）、Apple Health、Copilot Money\n\n### 5.2 色彩系统\n\n```\n// 主色调\nPrimary Green:     #A8F0B0 (薄荷绿，钱包卡片/积极状态)\nPrimary Blue:      #B0D4F0 (浅蓝，次要卡片)\nPrimary Purple:    #C8B8E8 (淡紫，辅助卡片)\n\n// 语义色\nPositive/Income:   #34C759 (系统绿，收入/正向)\nNegative/Expense:  #FF3B30 (系统红，超支/警告)\nWarning/Over:      #FF9500 (系统橙，预算超支)\nNeutral Text:      #000000 (主文字)\nSecondary Text:    #8E8E93 (副文字)\n\n// 背景色\nPage Background:   #F2F2F7 (浅灰背景)\nCard Background:   #FFFFFF (卡片白色)\nTab Bar Background: #FFFFFF (底栏白色)\n```\n\n### 5.3 字体层级\n\n```\n// 使用系统 San Francisco 字体\nDisplay Large:  .system(size: 64, weight: .black)     // 钱包大标题 \"消费\"\nDisplay Medium: .system(size: 48, weight: .bold)       // 总资产金额 \"¥113K\"\nTitle 1:        .system(size: 34, weight: .bold)       // 页面标题 \"历史记录\"\nTitle 2:        .system(size: 28, weight: .semibold)   // 卡片主金额 \"¥111.2\"\nTitle 3:        .system(size: 22, weight: .semibold)   // 次要金额\nHeadline:       .system(size: 17, weight: .semibold)   // 卡片标题\nBody:           .system(size: 17, weight: .regular)    // 正文\nCallout:        .system(size: 16, weight: .regular)    // 辅助信息\nCaption:        .system(size: 12, weight: .regular)    // 标签/时间\n```\n\n### 5.4 间距和圆角\n\n```\nCard Corner Radius:    16-20pt\nButton Corner Radius:  12pt (小) / 25pt (圆形)\nCard Padding:          16-20pt\nSection Spacing:       12-16pt\nList Item Spacing:     8-12pt\nScreen Horizontal Padding: 16-20pt\n```\n\n### 5.5 动画规范\n\n```\nPage Transition:       .easeInOut(duration: 0.3)\nCard Expand/Collapse:  .spring(response: 0.4, dampingFraction: 0.8)\nNumber Count Up:       .easeOut(duration: 0.5) + ContentTransition.numericText()\nTab Switch:            .easeInOut(duration: 0.2)\nButton Press:          .spring(response: 0.2) + scale(0.95)\nSheet Present:         .spring(response: 0.35, dampingFraction: 0.86)\n```\n\n### 5.6 Tab Bar 设计\n\n```\n┌────────────┬────────────┬────────────┬────────────┐\n│  ☀️ 今天   │  🗂 钱包   │  🕐 历史记录 │  📊 统计   │\n│  (Today)   │  (Wallet)  │  (History)  │ (Stats)   │\n└────────────┴────────────┴────────────┴────────────┘\n- 选中状态：黑色图标 + 灰色胶囊背景\n- 未选中状态：灰色图标\n- SF Symbols: sun.max, creditcard, clock.arrow.circlepath, chart.bar\n```\n\n---\n\n## 六、关键技术实现方案\n\n### 6.1 SwiftData iCloud 同步\n\n```swift\n// ModelContainer 配置\n@main\nstruct GreyRhinoApp: App {\n    var body: some Scene {\n        WindowGroup {\n            AppTabView()\n        }\n        .modelContainer(for: [\n            Transaction.self,\n            Wallet.self,\n            Category.self,\n            Budget.self\n        ], isAutosaveEnabled: true)\n        // SwiftData 自动处理 iCloud 同步\n    }\n}\n```\n\n**注意事项**：\n- 需要开启 iCloud 和 CloudKit 能力\n- 使用 `@Query` 和 `@Environment(\\.modelContext)` 管理数据\n- 冲突解决策略：以最后修改时间为准（last-write-wins）\n- 首次同步可能需要较长时间，需提供 loading 状态\n\n### 6.2 账单导入（微信/支付宝）\n\n```swift\n// 微信账单 CSV 格式解析\nclass WeChatBillImporter {\n    func parse(csvData: Data) -> [ImportedTransaction] {\n        // 解析微信导出的 CSV 格式\n        // 字段映射：交易时间 → date, 交易类型 → type,\n        //          商品 → note, 金额 → amount\n    }\n}\n\n// 支付宝账单 CSV 格式解析\nclass AlipayBillImporter {\n    func parse(csvData: Data) -> [ImportedTransaction] {\n        // 解析支付宝导出的 CSV 格式\n    }\n}\n```\n\n**导入流程**：\n1. 用户从微信/支付宝导出 CSV 文件\n2. 通过 Files App 或 Share Sheet 传入 GreyRhino\n3. 自动识别来源（微信/支付宝）\n4. 预览导入数据，用户确认分类映射\n5. 批量写入 SwiftData\n\n### 6.3 主屏幕小组件 (WidgetKit)\n\n```swift\n// 小组件类型\nstruct GreyRhinoWidget: Widget {\n    var body: some WidgetConfiguration {\n        StaticConfiguration(kind: \"GreyRhinoWidget\", provider: GreyRhinoWidgetProvider()) { entry in\n            GreyRhinoWidgetView(entry: entry)\n        }\n        .configurationDisplayName(\"GreyRhino 记账\")\n        .description(\"查看今日消费和预算\")\n        .supportedFamilies([.systemSmall, .systemMedium])\n    }\n}\n\n// 小尺寸：显示今日消费 + 预算剩余\n// 中尺寸：显示今日消费 + 最近 3 条记录\n```\n\n**数据共享**：使用 App Group 实现主 App 和 Widget 数据共享\n\n### 6.4 自动化记账 (App Intents)\n\n```swift\nstruct AddExpenseIntent: AppIntent {\n    static var title: LocalizedStringResource = \"添加一笔支出\"\n    \n    @Parameter(title: \"金额\") var amount: Double\n    @Parameter(title: \"分类\") var category: String\n    @Parameter(title: \"备注\") var note: String?\n    \n    func perform() async throws -> some IntentResult {\n        // 创建 Transaction 并写入 SwiftData\n        return .result()\n    }\n}\n```\n\n**使用场景**：\n- Siri: \"用 GreyRhino 记一笔 15 块的交通费\"\n- Shortcuts: 自动化工作流（如每天固定时间提醒记账）\n\n### 6.5 货币自动切换\n\n```swift\nclass CurrencyService {\n    func detectCurrency(for location: CLLocation) -> Currency {\n        let geocoder = CLGeocoder()\n        // 根据反向地理编码获取国家代码\n        // 映射到对应货币\n    }\n    \n    func convert(amount: Decimal, from: Currency, to: Currency) -> Decimal {\n        // 使用 ECB 或免费汇率 API 进行转换\n        // 缓存汇率数据，离线可用\n    }\n}\n```\n\n### 6.6 智能消费洞察（本地规则引擎）\n\n```swift\nclass InsightEngine {\n    /// 分析消费模式并生成洞察\n    func generateInsights(transactions: [Transaction]) -> [Insight] {\n        var insights: [Insight] = []\n        \n        // 规则 1: 消费集中度分析\n        let topCategory = findTopCategory(transactions)\n        if topCategory.percentage > 0.4 {\n            insights.append(.highConcentration(category: topCategory))\n        }\n        \n        // 规则 2: 异常消费检测\n        let anomalies = detectAnomalies(transactions)\n        insights.append(contentsOf: anomalies)\n        \n        // 规则 3: 同比/环比变化\n        let comparison = compareWithPrevious(transactions)\n        insights.append(contentsOf: comparison)\n        \n        // 规则 4: 储蓄目标追踪\n        let savingsProgress = calculateSavingsProgress(transactions)\n        insights.append(.savingsProgress(savingsProgress))\n        \n        return insights\n    }\n}\n```\n\n---\n\n## 七、开发阶段规划\n\n> 以独立开发者为基准，每天投入 4-6 小时有效开发时间\n\n### 第一阶段：基础框架搭建（第 1-2 周）\n\n**目标**：完成项目骨架和核心数据层\n\n| 任务 | 详情 |\n|-----|------|\n| 项目初始化 | 创建 Xcode 项目，配置 SwiftData、iCloud |\n| 数据模型 | 实现 Transaction、Wallet、Category、Budget 模型 |\n| 预设数据 | 初始化默认分类和默认钱包 |\n| Tab 导航 | 实现底部 4-Tab 导航结构 |\n| 基础 UI 组件 | CardContainerView、AmountDisplayView 等 |\n\n**交付物**：可运行的 App 骨架，Tab 切换正常，数据库可读写\n\n---\n\n### 第二阶段：核心记账功能（第 3-4 周）\n\n**目标**：实现基本的记账和查看功能\n\n| 任务 | 详情 |\n|-----|------|\n| 添加交易页面 | 金额输入、分类选择、钱包选择、日期选择 |\n| 今天页面 | 预算进度卡、月度概览、储蓄比例 |\n| 历史记录页面 | 交易列表（按日分组）、概览卡片 |\n| 钱包页面 | 钱包列表（卡片堆叠）、总资产显示 |\n| 交易 CRUD | 创建、读取、更新、删除交易记录 |\n\n**交付物**：可以正常记账、查看历史、管理钱包的完整流程\n\n---\n\n### 第三阶段：统计分析（第 5-6 周）\n\n**目标**：实现统计页面和智能洞察\n\n| 任务 | 详情 |\n|-----|------|\n| 分类统计 | 环形图、支出类别分析 |\n| 周统计 | 每日柱状图、周环比 |\n| 月统计 | 月度趋势折线图 |\n| 预算管理 | 预算设置、进度追踪、超支提醒 |\n| 智能洞察 | 消费集中度分析、异常检测、建议生成 |\n\n**交付物**：完整的统计分析功能，包含图表和洞察\n\n---\n\n### 第四阶段：高级功能（第 7-8 周）\n\n**目标**：实现 Pro 级功能\n\n| 任务 | 详情 |\n|-----|------|\n| 内购系统 | StoreKit 2 集成，订阅/终身买断 |\n| Paywall 页面 | Pro 功能展示、购买流程 |\n| 数据导出 | CSV 导出功能 |\n| 账单导入 | 微信/支付宝 CSV 解析 |\n| 分类管理 | 自定义分类增删改查 |\n| iCloud 同步 | 测试和优化同步功能 |\n\n**交付物**：完整的 Pro 功能，内购流程可用\n\n---\n\n### 第五阶段：扩展功能（第 9-10 周）\n\n**目标**：实现系统级扩展\n\n| 任务 | 详情 |\n|-----|------|\n| 主屏幕小组件 | WidgetKit 小/中尺寸组件 |\n| Shortcuts 集成 | App Intents 自动化记账 |\n| 货币切换 | 基于位置的自动货币检测 |\n| 通知系统 | 每日记账提醒、预算超支通知 |\n\n**交付物**：Widget、Shortcuts、通知功能完成\n\n---\n\n### 第六阶段：打磨上线（第 11-12 周）\n\n**目标**：测试、优化、上线\n\n| 任务 | 详情 |\n|-----|------|\n| UI 打磨 | 动画微调、暗黑模式适配、无障碍 |\n| 性能优化 | 大数据量下的列表性能、启动速度 |\n| 国际化 | 中文/英文双语 |\n| TestFlight | 内测、收集反馈 |\n| App Store | 准备截图、描述、关键词、提交审核 |\n\n**交付物**：App Store 上架版本\n\n---\n\n## 八、里程碑总览\n\n```\n Week  1-2  ████░░░░░░░░  基础框架搭建\n Week  3-4  ████████░░░░  核心记账功能 (内部可用版)\n Week  5-6  ████████████  统计分析功能\n Week  7-8  ████████████  高级/Pro 功能\n Week  9-10 ████████████  系统扩展 (Widget/Shortcuts)\n Week 11-12 ████████████  打磨 & 上线 App Store\n```\n\n**关键里程碑**：\n- **Week 4**：Alpha 版本 — 核心记账功能可用，可开始自用\n- **Week 8**：Beta 版本 — 全功能完成，开启 TestFlight 内测\n- **Week 12**：Release 版本 — 提交 App Store 审核\n\n---\n\n## 九、风险评估与对策\n\n| 风险 | 可能性 | 影响 | 对策 |\n|-----|--------|------|------|\n| SwiftData 性能瓶颈（大数据量） | 中 | 高 | 分页查询、后台线程处理、数据归档 |\n| iCloud 同步冲突 | 中 | 中 | 采用 last-write-wins 策略，UI 提示同步状态 |\n| 微信/支付宝 CSV 格式变更 | 高 | 中 | 模块化解析器设计，版本化格式适配 |\n| App Store 审核被拒 | 低 | 高 | 严格遵循 HIG，内购合规，隐私声明完整 |\n| iOS 版本升级兼容 | 低 | 中 | 最低支持 iOS 17，定期跟进 WWDC |\n| 用户量增长后性能问题 | 低 | 中 | 纯本地架构，性能瓶颈主要在本地查询优化 |\n\n---\n\n## 十、性能优化策略\n\n### 10.1 数据查询优化\n```swift\n// 使用 @Query 的 filter 和 sort 减少内存占用\n@Query(\n    filter: #Predicate<Transaction> { $0.date >= startOfMonth },\n    sort: [SortDescriptor(\\.date, order: .reverse)],\n    animation: .default\n)\nvar monthlyTransactions: [Transaction]\n\n// 大数据量使用 fetchLimit 分页\nlet descriptor = FetchDescriptor<Transaction>(\n    sortBy: [SortDescriptor(\\.date, order: .reverse)]\n)\ndescriptor.fetchLimit = 50\ndescriptor.fetchOffset = page * 50\n```\n\n### 10.2 UI 性能\n- 长列表使用 `LazyVStack` + `ScrollView` 避免加载全部 Cell\n- 图表数据预计算，缓存结果\n- 图片/图标使用 SF Symbols 减少资源体积\n- 使用 `@Observable` (Observation framework) 替代 `@Published` 减少不必要刷新\n\n### 10.3 启动速度\n- 数据库迁移异步执行\n- 首页数据优先加载\n- 预设数据懒初始化\n\n---\n\n## 十一、测试策略\n\n| 类型 | 工具 | 覆盖范围 |\n|------|------|---------|\n| 单元测试 | XCTest | 数据模型、Service 层、金额计算 |\n| UI 测试 | XCUITest | 核心流程（记账、查看历史、统计） |\n| 快照测试 | swift-snapshot-testing | 关键 UI 组件一致性 |\n| 性能测试 | XCTest Performance | 大数据量查询、列表滚动 |\n| 手工测试 | TestFlight | 真机各场景覆盖 |\n\n**重点测试场景**：\n- 金额计算精度（使用 Decimal 而非 Double）\n- iCloud 同步（多设备同时操作）\n- 大数据量（10000+ 条记录）下的性能\n- 账单导入各种边界情况\n- 内购购买和恢复流程\n\n---\n\n## 十二、后续迭代方向（v2.0+）\n\n| 功能 | 描述 |\n|------|------|\n| 多人共享账本 | 家庭/情侣共享记账 |\n| 预算模板 | 预设常见预算模板（如 50/30/20 规则） |\n| 周期性交易 | 自动记录固定支出（房租、订阅等） |\n| 照片附件 | 拍照保存发票/小票 |\n| Apple Watch App | 手表快速记账 |\n| OCR 识别 | 拍照自动识别金额和商户 |\n| 银行 API | 接入 Open Banking 自动同步交易 |\n| AI 预测 | 基于历史数据预测未来支出 |\n\n---\n\n## 十三、App Store 上线准备清单\n\n- [ ] App 名称和副标题确定\n- [ ] App 图标设计（1024x1024）\n- [ ] App Store 截图（6.7\" + 6.1\" + iPad）\n- [ ] 应用描述（中英文）\n- [ ] 关键词优化\n- [ ] 隐私政策页面\n- [ ] 用户协议页面\n- [ ] App Store Connect 配置\n- [ ] 内购商品配置和审核\n- [ ] TestFlight 内测至少 2 周\n- [ ] 崩溃率 < 0.1%\n- [ ] 提交审核\n\n---\n\n> **文档版本**：v1.0  \n> **最后更新**：2026-03-30  \n> **项目代号**：GreyRhino\n"
+    },
+    {
+      "slug": "yolo-snake",
+      "title": "Yolo Snake",
+      "description": "",
+      "date": "2025-07-29",
+      "tags": [],
+      "github": "https://github.com/Mnting/yolo-snake",
+      "stars": 0,
+      "updatedAt": "2025-07-29T06:36:16Z",
+      "color": "from-gray-500/10 to-gray-400/10",
+      "rawContent": null
+    },
+    {
+      "slug": "eatting",
+      "title": "Eatting",
+      "description": "",
+      "date": "2025-07-20",
+      "tags": [],
+      "github": "https://github.com/Mnting/eatting",
+      "stars": 0,
+      "updatedAt": "2025-07-20T08:51:08Z",
+      "color": "from-gray-500/10 to-gray-400/10",
+      "rawContent": null
+    },
+    {
+      "slug": "deleteimage",
+      "title": "DeleteImage",
+      "description": "产品目的：快速整理相册删除不需要的照片",
+      "date": "2024-11-27",
+      "tags": [
+        "Swift"
+      ],
+      "github": "https://github.com/Mnting/DeleteImage",
+      "language": "Swift",
+      "stars": 0,
+      "updatedAt": "2024-11-27T02:04:10Z",
+      "color": "from-orange-500/10 to-red-500/10",
+      "rawContent": "产品目的：快速整理相册删除不需要的照片\n整理相册的思路：大部分都是废片，我们只需要保留有记忆点的照片即可。将未分类的相册一次性全部删除，让用户选择需要保留的图片。\n"
+    },
+    {
+      "slug": "message",
+      "title": "Message",
+      "description": "中文短信分类",
+      "date": "2024-08-06",
+      "tags": [],
+      "github": "https://github.com/Mnting/message",
+      "stars": 0,
+      "updatedAt": "2024-08-06T08:23:36Z",
+      "color": "from-gray-500/10 to-gray-400/10",
+      "rawContent": "# message\n中文短信分类\n"
+    },
+    {
+      "slug": "myzd",
+      "title": "Myzd",
+      "description": "",
+      "date": "2019-07-31",
+      "tags": [],
+      "github": "https://github.com/Mnting/myzd",
+      "stars": 0,
+      "updatedAt": "2024-08-05T15:10:29Z",
+      "color": "from-gray-500/10 to-gray-400/10",
+      "rawContent": null
+    },
+    {
+      "slug": "wechatproject",
+      "title": "WeChatProject",
+      "description": "",
+      "date": "2024-08-02",
+      "tags": [
+        "Swift"
+      ],
+      "github": "https://github.com/Mnting/weChatProject",
+      "language": "Swift",
+      "stars": 0,
+      "updatedAt": "2024-08-02T10:35:53Z",
+      "color": "from-orange-500/10 to-red-500/10",
+      "rawContent": null
+    },
+    {
+      "slug": "letsgo",
+      "title": "LetsGo",
+      "description": "",
+      "date": "2024-06-07",
+      "tags": [
+        "Java"
+      ],
+      "github": "https://github.com/Mnting/letsGo",
+      "language": "Java",
+      "stars": 0,
+      "updatedAt": "2024-06-07T09:35:16Z",
+      "color": "from-red-500/10 to-orange-500/10",
+      "rawContent": null
+    },
+    {
+      "slug": "try",
+      "title": "Try",
+      "description": "",
+      "date": "2024-06-06",
+      "tags": [
+        "Python"
+      ],
+      "github": "https://github.com/Mnting/try",
+      "language": "Python",
+      "stars": 0,
+      "updatedAt": "2024-06-06T02:45:05Z",
+      "color": "from-green-500/10 to-emerald-500/10",
+      "rawContent": "# 尝试的demo都放在这里同步"
+    },
+    {
+      "slug": "ipad-jupyter",
+      "title": "Ipad Jupyter",
+      "description": "",
+      "date": "2021-01-13",
+      "tags": [],
+      "github": "https://github.com/Mnting/ipad-jupyter",
+      "stars": 0,
+      "updatedAt": "2021-01-13T16:16:30Z",
+      "color": "from-gray-500/10 to-gray-400/10",
+      "rawContent": null
+    },
     {
       "slug": "mooc",
       "title": "MOOC",
@@ -16,6 +178,36 @@
       "updatedAt": "2020-12-14T08:29:21Z",
       "color": "from-red-500/10 to-orange-500/10",
       "rawContent": "慕课网课程随堂练习——自觉更新"
+    },
+    {
+      "slug": "patcode",
+      "title": "Patcode",
+      "description": "coding forever",
+      "date": "2020-05-14",
+      "tags": [
+        "Java"
+      ],
+      "github": "https://github.com/Mnting/patcode",
+      "language": "Java",
+      "stars": 0,
+      "updatedAt": "2020-05-14T15:18:50Z",
+      "color": "from-red-500/10 to-orange-500/10",
+      "rawContent": "coding forever\r\njava和c++混用..\r\n"
+    },
+    {
+      "slug": "to-see-the-world",
+      "title": "TO SEE THE WORLD",
+      "description": "",
+      "date": "2019-03-02",
+      "tags": [
+        "Java"
+      ],
+      "github": "https://github.com/Mnting/TO-SEE-THE-WORLD",
+      "language": "Java",
+      "stars": 0,
+      "updatedAt": "2019-03-02T06:05:49Z",
+      "color": "from-red-500/10 to-orange-500/10",
+      "rawContent": null
     }
   ]
 }
