@@ -14,9 +14,8 @@ LOCAL_DIR="content/photography"
 DIST_DIR="dist/assets"
 MAX_SIZE_MB=100
 
-# Supported extensions (case-insensitive handled in loop)
-IMG_EXTS=("png" "PNG" "jpg" "JPG" "jpeg" "JPEG" "webp" "WEBP" "gif" "GIF" "avif" "AVIF")
-VID_EXTS=("mp4" "MP4" "mov" "MOV" "avi" "AVI" "mkv" "MKV")
+# Supported image extensions (case-insensitive handled in loop)
+EXTS=("png" "PNG" "jpg" "JPG" "jpeg" "JPEG" "webp" "WEBP" "gif" "GIF" "avif" "AVIF")
 
 # ============================================================
 # 1. Ensure dist/assets/ exists
@@ -31,7 +30,7 @@ fi
 # ============================================================
 FILES=()
 SKIPPED=()
-for ext in "${IMG_EXTS[@]}" "${VID_EXTS[@]}"; do
+for ext in "${EXTS[@]}"; do
   for f in "$LOCAL_DIR"/*."$ext"; do
     [ -f "$f" ] || continue
     size_mb=$(du -m "$f" | cut -f1)

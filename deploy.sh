@@ -30,7 +30,7 @@ bash scripts/upload-images.sh
 # 5. 删除本地图片（已复制到 dist/assets/，随部署上线）
 echo ""
 echo "🗑️  清理本地图片..."
-rm -f content/photography/*.png content/photography/*.jpg content/photography/*.jpeg content/photography/*.webp content/photography/*.gif content/photography/*.avif content/photography/*.mp4 content/photography/*.mov content/photography/*.avi content/photography/*.mkv 2>/dev/null || true
+rm -f content/photography/*.png content/photography/*.PNG content/photography/*.jpg content/photography/*.JPG content/photography/*.jpeg content/photography/*.JPEG content/photography/*.webp content/photography/*.WEBP content/photography/*.gif content/photography/*.GIF content/photography/*.avif content/photography/*.AVIF 2>/dev/null || true
 
 # 6. 提交代码到 main（包含 github-projects.json 更新 + 其他内容变更）
 echo ""
@@ -55,7 +55,7 @@ npx gh-pages -d dist --dotfiles --add
 # 9. 清理 dist/assets/ 中的临时图片（已部署到 gh-pages，释放本地空间）
 echo ""
 echo "🧹 清理 dist/assets/ 临时图片..."
-rm -f dist/assets/*.png dist/assets/*.PNG dist/assets/*.jpg dist/assets/*.JPG dist/assets/*.jpeg dist/assets/*.JPEG dist/assets/*.webp dist/assets/*.WEBP dist/assets/*.gif dist/assets/*.GIF dist/assets/*.avif dist/assets/*.AVIF dist/assets/*.mp4 dist/assets/*.MP4 dist/assets/*.mov dist/assets/*.MOV dist/assets/*.avi dist/assets/*.AVI dist/assets/*.mkv dist/assets/*.MKV 2>/dev/null || true
+rm -f dist/assets/*.png dist/assets/*.PNG dist/assets/*.jpg dist/assets/*.JPG dist/assets/*.jpeg dist/assets/*.JPEG dist/assets/*.webp dist/assets/*.WEBP dist/assets/*.gif dist/assets/*.GIF dist/assets/*.avif dist/assets/*.AVIF 2>/dev/null || true
 
 echo ""
 echo "✅ 完成！访问 https://mnting.github.io 查看"

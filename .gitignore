@@ -19,8 +19,4 @@ content/photography/*.jpeg
 content/photography/*.webp
 content/photography/*.gif
 content/photography/*.avif
-content/photography/*.mp4
-content/photography/*.mov
-content/photography/*.avi
-content/photography/*.mkv
 content/photography/*.dng
